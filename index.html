@@ -158,6 +158,17 @@ section.band.alt{background:var(--surface)}
 /* vehicle page */
 .gallery{display:grid;gap:14px}
 .gallery .main-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);display:block;background:var(--surface-2);cursor:zoom-in}
+.main-wrap{position:relative}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:999px;border:0;display:grid;place-items:center;cursor:pointer;background:rgba(15,25,19,.55);color:#fff;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background .15s}
+.gal-nav:hover{background:rgba(15,25,19,.8)}
+.gal-nav svg{width:24px;height:24px}
+.gal-prev{left:12px}.gal-next{right:12px}
+.gal-count{position:absolute;right:12px;bottom:12px;background:rgba(15,25,19,.6);color:#fff;font:600 .85rem/1 var(--f-body);padding:6px 10px;border-radius:999px;font-variant-numeric:tabular-nums;pointer-events:none}
+.lb .gal-nav{position:fixed;top:50%;right:auto;padding:0;border-radius:999px;color:#fff;background:rgba(255,255,255,.16)}
+.lb .gal-nav:hover{background:rgba(255,255,255,.3)}
+.lb .gal-prev{left:max(12px,env(safe-area-inset-left,0px))}.lb .gal-next{left:auto;right:max(12px,env(safe-area-inset-right,0px))}
+.lb .gal-count{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));right:auto;left:50%;transform:translateX(-50%)}
+@media (max-width:560px){.gal-nav{width:42px;height:42px}.gal-prev{left:8px}.gal-next{right:8px}}
 .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px}
 .thumbs button{padding:0;border:0;border-radius:6px;overflow:hidden;cursor:pointer;aspect-ratio:1;background:var(--surface-2);opacity:.75}
 .thumbs button[aria-pressed="true"]{opacity:1;box-shadow:0 0 0 3px var(--ochre)}
@@ -355,7 +366,7 @@ footer .wm span{font-size:.6em}
 <div class="note-lang" id="langNote" hidden><div class="wrap" id="langNoteText"></div></div>
 <main id="app"></main>
 <footer><div class="wrap" id="foot"></div></footer>
-<div class="lb" id="lb" hidden><img id="lbImg" alt=""><button id="lbClose">Zavřít</button></div>
+<div class="lb" id="lb" hidden><img id="lbImg" alt=""><button id="lbClose">Zavřít</button><button type="button" class="gal-nav lb-nav gal-prev" id="lbPrev" data-dir="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav lb-nav gal-next" id="lbNext" data-dir="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count lb-count" id="lbCount"></span></div>
 
 <script>
 /* ====== EDIT HERE: name & contacts ====== */
@@ -531,7 +542,7 @@ const MONTHS_L = {
 const DOW_L = {cs:["po","út","st","čt","pá","so","ne"], sk:["po","ut","st","št","pi","so","ne"], en:["Mo","Tu","We","Th","Fr","Sa","Su"], de:["Mo","Di","Mi","Do","Fr","Sa","So"]};
 const I18N = {
   cs: {
-    nav_home:"Úvod", nav_van:"Naše vozy", nav_how:"Jak to funguje", nav_contact:"Kontakt", nav_label:"Hlavní navigace", lang_label:"Jazyk", menu:"Menu", close:"Zavřít",
+    gal_prev:"Předchozí fotka", gal_next:"Další fotka", nav_home:"Úvod", nav_van:"Naše vozy", nav_how:"Jak to funguje", nav_contact:"Kontakt", nav_label:"Hlavní navigace", lang_label:"Jazyk", menu:"Menu", close:"Zavřít",
     hero_eyebrow:"Půjčovna obytných vozů · Ostrava-Poruba",
     brand_sub:"Půjčovna obytných vozů · Ostrava",
     meta_desc:"VANDR na čtyřech kolech – půjčovna obytné dodávky Ford Transit v Ostravě-Porubě.",
@@ -578,7 +589,7 @@ const I18N = {
     msg_hello:"Dobrý den, mám zájem o pronájem vozu", msg_thanks:"Děkuji.", msg_subject:"Poptávka",
   },
   en: {
-    nav_home:"Home", nav_van:"Our vans", nav_how:"How it works", nav_contact:"Contact", nav_label:"Main navigation", lang_label:"Language", menu:"Menu", close:"Close",
+    gal_prev:"Previous photo", gal_next:"Next photo", nav_home:"Home", nav_van:"Our vans", nav_how:"How it works", nav_contact:"Contact", nav_label:"Main navigation", lang_label:"Language", menu:"Menu", close:"Close",
     hero_eyebrow:"Campervan rental · Ostrava-Poruba",
     brand_sub:"Campervan rental · Ostrava",
     meta_desc:"VANDR na čtyřech kolech – campervan rental in Ostrava-Poruba, Czech Republic: Ford Transit with kitchenette and heater.",
@@ -625,7 +636,7 @@ const I18N = {
     msg_hello:"Hello, I'd like to rent the", msg_thanks:"Thank you.", msg_subject:"Enquiry",
   },
   sk: {
-    nav_home:"Úvod", nav_van:"Naše vozidlá", nav_how:"Ako to funguje", nav_contact:"Kontakt", nav_label:"Hlavná navigácia", lang_label:"Jazyk", menu:"Menu", close:"Zavrieť",
+    gal_prev:"Predchádzajúca fotka", gal_next:"Ďalšia fotka", nav_home:"Úvod", nav_van:"Naše vozidlá", nav_how:"Ako to funguje", nav_contact:"Kontakt", nav_label:"Hlavná navigácia", lang_label:"Jazyk", menu:"Menu", close:"Zavrieť",
     hero_eyebrow:"Požičovňa obytných vozidiel · Ostrava-Poruba",
     brand_sub:"Požičovňa obytných áut · Ostrava",
     meta_desc:"VANDR na čtyřech kolech – požičovňa obytnej dodávky Ford Transit v Ostrave-Porube.",
@@ -672,7 +683,7 @@ const I18N = {
     msg_hello:"Dobrý deň, mám záujem o prenájom vozidla", msg_thanks:"Ďakujem.", msg_subject:"Dopyt",
   },
   de: {
-    nav_home:"Start", nav_van:"Unsere Fahrzeuge", nav_how:"So funktioniert's", nav_contact:"Kontakt", nav_label:"Hauptnavigation", lang_label:"Sprache", menu:"Menü", close:"Schließen",
+    gal_prev:"Vorheriges Foto", gal_next:"Nächstes Foto", nav_home:"Start", nav_van:"Unsere Fahrzeuge", nav_how:"So funktioniert's", nav_contact:"Kontakt", nav_label:"Hauptnavigation", lang_label:"Sprache", menu:"Menü", close:"Schließen",
     hero_eyebrow:"Wohnmobilvermietung · Ostrava-Poruba",
     brand_sub:"Wohnmobilvermietung · Ostrava",
     meta_desc:"VANDR na čtyřech kolech – Wohnmobilvermietung in Ostrava-Poruba: Ford Transit mit Küchenzeile und Standheizung.",
@@ -845,7 +856,7 @@ function renderChrome(rt){
   $("#menuBtn").textContent = t("menu");
   $("#mainNav").setAttribute("aria-label", t("nav_label"));
   $("#lang").setAttribute("aria-label", t("lang_label"));
-  $("#lbClose").textContent = t("close");
+  $("#lbClose").textContent = t("close"); $("#lbPrev").setAttribute("aria-label",t("gal_prev")); $("#lbNext").setAttribute("aria-label",t("gal_next"));
   const active = rt.page==="vehicle" ? "vozy" : (rt.section||"uvod");
   $("#mainNav").innerHTML = ROUTES.map(([id,k])=>'<a href="#'+id+'"'+(active===id?' aria-current="page"':'')+'>'+esc(t(k))+'</a>').join("");
   const lb = LANGS.map(l=>'<button type="button" data-l="'+l+'" lang="'+l+'" aria-pressed="'+(l===lang)+'">'+l.toUpperCase()+'</button>').join("");
@@ -911,7 +922,7 @@ function vehicleDetail(v){
   const p=v.photos;
   return '<section class="band vtop"><div class="wrap">'+
     '<p class="crumb"><a href="#vozy">← '+esc(t("back"))+'</a></p>'+
-    '<div class="vgrid"><div class="gallery" data-v="'+v.id+'"><img class="main-img" src="'+p[0].src+'" alt="'+esc(L(p[0].alt))+'">'+
+    '<div class="vgrid"><div class="gallery" data-v="'+v.id+'"><div class="main-wrap"><img class="main-img" src="'+p[0].src+'" alt="'+esc(L(p[0].alt))+'">'+(p.length>1?'<button type="button" class="gal-nav gal-prev" data-dir="-1" aria-label="'+esc(t("gal_prev"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav gal-next" data-dir="1" aria-label="'+esc(t("gal_next"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count">1 / '+p.length+'</span>':'')+'</div>'+
       '<div class="thumbs">'+p.map((x,i)=>'<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="'+esc(L(x.alt))+'"><img src="'+x.src.replace('img/','img/thumb/')+'" alt="" loading="lazy"></button>').join("")+'</div></div>'+
       '<div class="vsum"><div class="eyebrow">'+mark("green")+esc(L(v.sub))+'</div><h1 class="vh1">'+esc(v.name)+'</h1>'+
         '<p>'+esc(L(v.summary))+'</p>'+
@@ -1008,6 +1019,30 @@ function preloadPhotos(v){
   const go=()=>(v.photos||[]).forEach(p=>{ if(preloaded.has(p.src)) return; preloaded.add(p.src); const i=new Image(); i.decoding="async"; i.src=p.src; });
   if(document.readyState==="complete") setTimeout(go,300); else addEventListener("load",()=>setTimeout(go,300),{once:true});
 }
+/* gallery: arrows, keyboard and swipe */
+let lbGallery=null;
+function galIndex(g){ const b=g.querySelector('.thumbs button[aria-pressed="true"]'); return b?+b.dataset.i:0; }
+function galShow(g,i){
+  const v=VEHICLES.find(x=>x.id===g.dataset.v); const n=v.photos.length; i=((i%n)+n)%n; const ph=v.photos[i];
+  const im=$(".main-img",g); im.src=ph.src; im.alt=L(ph.alt);
+  g.querySelectorAll(".thumbs button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
+  const c=$(".gal-count",g); if(c) c.textContent=(i+1)+" / "+n;
+  if(lbGallery===g && !$("#lb").hidden){ $("#lbImg").src=ph.src; $("#lbImg").alt=L(ph.alt); syncLb(); }
+}
+function galStep(g,d){ galShow(g, galIndex(g)+d); }
+function syncLb(){ if(!lbGallery) return; const v=VEHICLES.find(x=>x.id===lbGallery.dataset.v); const n=v.photos.length;
+  $("#lbCount").textContent=(galIndex(lbGallery)+1)+" / "+n; ["#lbPrev","#lbNext","#lbCount"].forEach(id=>$(id).hidden=n<2); }
+document.addEventListener("keydown", e=>{
+  if(e.key!=="ArrowLeft" && e.key!=="ArrowRight") return;
+  const d=e.key==="ArrowLeft"?-1:1;
+  if(!$("#lb").hidden && lbGallery){ e.preventDefault(); galStep(lbGallery,d); return; }
+  const g=document.activeElement && document.activeElement.closest && document.activeElement.closest(".gallery"); if(g){ e.preventDefault(); galStep(g,d); }
+});
+let swX=null, swY=null;
+document.addEventListener("touchstart", e=>{ if(!e.target.closest(".main-wrap") && e.target.id!=="lbImg"){ swX=null; return; } swX=e.touches[0].clientX; swY=e.touches[0].clientY; }, {passive:true});
+document.addEventListener("touchend", e=>{ if(swX===null) return; const dx=e.changedTouches[0].clientX-swX, dy=e.changedTouches[0].clientY-swY; const tgt=e.target; swX=null;
+  if(Math.abs(dx)<45 || Math.abs(dx)<Math.abs(dy)*1.3) return;
+  const g = tgt.id==="lbImg" ? lbGallery : tgt.closest(".gallery"); if(g) galStep(g, dx<0?1:-1); }, {passive:true});
 window.addEventListener("hashchange", ()=>render());
 
 /* keep typed form values across a language switch */
@@ -1026,9 +1061,9 @@ document.addEventListener("click", async e=>{
   const a=e.target.closest('a[href^="#"]');
   if(a && a.getAttribute("href")===location.hash){ e.preventDefault(); render(); return; }
   const jump=e.target.closest("[data-jump]"); if(jump){ scrollToId(jump.dataset.jump, true); return; }
-  const th=e.target.closest(".thumbs button"); if(th){ const g=th.closest(".gallery"); const v=VEHICLES.find(x=>x.id===g.dataset.v); const ph=v.photos[+th.dataset.i];
-    const im=$(".main-img",g); im.src=ph.src; im.alt=L(ph.alt); g.querySelectorAll(".thumbs button").forEach(b=>b.setAttribute("aria-pressed",b===th)); return; }
-  const mi=e.target.closest(".main-img"); if(mi){ $("#lbImg").src=mi.src; $("#lbImg").alt=mi.alt; $("#lb").hidden=false; $("#lbClose").focus(); return; }
+  const th=e.target.closest(".thumbs button"); if(th){ galShow(th.closest(".gallery"), +th.dataset.i); return; }
+  const gn=e.target.closest(".gal-nav"); if(gn){ e.preventDefault(); const g=gn.classList.contains("lb-nav") ? lbGallery : gn.closest(".gallery"); if(g) galStep(g, +gn.dataset.dir); return; }
+  const mi=e.target.closest(".main-img"); if(mi){ lbGallery=mi.closest(".gallery"); syncLb(); $("#lbImg").src=mi.src; $("#lbImg").alt=mi.alt; $("#lb").hidden=false; $("#lbClose").focus(); return; }
   if(e.target.closest("#lbClose")||e.target.id==="lb"){ $("#lb").hidden=true; return; }
   const box=e.target.closest(".cal-box");
   if(box){

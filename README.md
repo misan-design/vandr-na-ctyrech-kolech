@@ -14,3 +14,7 @@ Web zveřejňuje **Netlify**. Každá změna uložená sem na GitHub se na webu 
 2. Klikáním označ obsazené dny (další klik den uvolní).
 3. Klikni na **Zkopírovat pro GitHub** – otevře se soubor `obsazenost.json` na GitHubu.
 4. Smaž celý jeho obsah, vlož nový (Ctrl+V) a dej **Commit changes**.
+
+## Poptávky (Netlify Forms)
+Každá odeslaná poptávka se uloží v Netlify (Forms → formulář `poptavka`).
+Upozornění e-mailem: Netlify → Project configuration → Notifications → Emails and webhooks → Form submission notifications.

@@ -356,6 +356,24 @@ footer .wm span{color:#F3C987}
 footer .wm{font-size:1.4rem}
 footer .wm span{font-size:.6em}
 .who-line{font-size:1.12rem;line-height:1.5;color:var(--fg);font-style:italic;margin-top:4px}.who-line strong{color:var(--ochre);font-style:normal;font-weight:700}
+/* A04 mobile bar, A08 tap targets, A10 honeypot */
+.mbar,.mbar-space{display:none}
+@media (max-width:760px){
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(20,35,25,.12);transition:transform .25s ease}
+  .mbar.mbar-off{transform:translateY(110%)}
+  .mbar .btn{min-height:50px;padding:10px 14px}
+  .mbar .btn-primary{flex:1;flex-direction:column;gap:2px;justify-content:center}
+  .mbar .btn-primary span{white-space:nowrap;font-size:.95rem}
+  .mbar-wa{font-size:.95rem}
+  .mbar .btn-primary small{font:600 .78rem/1 var(--f-body);text-transform:none;letter-spacing:0;opacity:.85}
+  .mbar-wa{flex:none}
+  .mbar-space{display:block;height:calc(76px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:380px){.mbar-wa span{display:none}}
+.ccard a.v{display:inline-flex;align-items:center;min-height:44px}
+.ccard-sub{min-height:44px}
+.foot-link{min-height:44px}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 @media (prefers-reduced-motion:no-preference){.fade{animation:fade .35s ease both}@keyframes fade{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
 </style>
 
@@ -578,7 +596,7 @@ const I18N = {
     how_place:"Ostrava-Poruba, nedaleko VŠB – Technické univerzity. Přesnou adresu pošleme po potvrzení rezervace.",
     map_link:"Okolí VŠB na Mapy.cz ↗",
     contact_eyebrow:"Kontakt", contact_title:"Kontakt a poptávka",
-    contact_text:"Vyplňte formulář a poptávku nám pošlete přes WhatsApp nebo e-mail. Poptávka je nezávazná, termín potvrdíme, až se vám ozveme.",
+    contact_text:"Vyplňte formulář a poptávka nám přijde rovnou. Je nezávazná – ozveme se vám co nejdříve a termín potvrdíme.",
     contact_cal:"Volné termíny najdete v kalendáři u vozu.",
     f_name:"Jméno a příjmení", f_email:"E-mail", f_phone:"Telefon", f_from:"Odjezd", f_to:"Návrat", f_people:"Počet osob", f_vehicle:"Vůz", f_msg:"Kam se chystáte? (nepovinné)",
     f_extras:"Doplňky za příplatek (nepovinné)",
@@ -587,7 +605,7 @@ const I18N = {
     f_err_order:"Den návratu musí být po dni odjezdu.",
     f_err_booked:"Ve vybraném termínu je obsazený den. Podívejte se do kalendáře.",
     f_prefilled:"Termín z kalendáře je předvyplněný.",
-    ho_title:"Poptávka je připravená. Pošlete ji nám:",
+    ho_title:"Poptávku se nepodařilo odeslat automaticky. Pošlete nám ji prosím jedním z těchto způsobů:", f_err_email:"Zkontrolujte prosím e-mail – vypadá neúplně.", f_err_phone:"Zkontrolujte prosím telefonní číslo – má mít aspoň 9 číslic.",
     ho_wa:"Poslat přes WhatsApp", ho_mail:"Poslat e-mailem", ho_copy:"Zkopírovat text", ho_copied:"Zkopírováno",
     ho_note:"Kdyby se aplikace neotevřela, zkopírujte text a pošlete ho na kontakt níže.",
     c_phone:"Telefon a WhatsApp", c_email:"E-mail", c_ig:"Instagram", c_place:"Místo převzetí", c_area:"Ostrava-Poruba, u VŠB",
@@ -625,7 +643,7 @@ const I18N = {
     how_place:"Ostrava-Poruba, near VŠB – Technical University of Ostrava. We send the exact address once your booking is confirmed.",
     map_link:"Area around VŠB on Mapy.cz ↗",
     contact_eyebrow:"Contact", contact_title:"Contact and enquiry",
-    contact_text:"Fill in the form and send us your enquiry via WhatsApp or e-mail. It is non-binding – we confirm your dates once we get back to you.",
+    contact_text:"Fill in the form and your enquiry comes straight to us. It is non-binding – we'll get back to you as soon as possible and confirm your dates.",
     contact_cal:"You'll find availability in the van's calendar.",
     f_name:"Full name", f_email:"E-mail", f_phone:"Phone", f_from:"Departure", f_to:"Return", f_people:"Number of people", f_vehicle:"Van", f_msg:"Where are you heading? (optional)",
     f_extras:"Extras for an extra charge (optional)",
@@ -634,7 +652,7 @@ const I18N = {
     f_err_order:"The return date must be after the departure date.",
     f_err_booked:"Your dates include a booked day. Please check the calendar.",
     f_prefilled:"Dates from the calendar are filled in.",
-    ho_title:"Your enquiry is ready. Send it to us:",
+    ho_title:"We couldn't send your enquiry automatically. Please send it to us in one of these ways:", f_err_email:"Please check your e-mail address – it looks incomplete.", f_err_phone:"Please check your phone number – it should have at least 9 digits.",
     ho_wa:"Send via WhatsApp", ho_mail:"Send by e-mail", ho_copy:"Copy text", ho_copied:"Copied",
     ho_note:"If the app doesn't open, copy the text and send it to one of the contacts below.",
     c_phone:"Phone and WhatsApp", c_email:"E-mail", c_ig:"Instagram", c_place:"Pick-up location", c_area:"Ostrava-Poruba, near VŠB",
@@ -672,7 +690,7 @@ const I18N = {
     how_place:"Ostrava-Poruba, neďaleko VŠB – Technickej univerzity. Presnú adresu pošleme po potvrdení rezervácie.",
     map_link:"Okolie VŠB na Mapy.cz ↗",
     contact_eyebrow:"Kontakt", contact_title:"Kontakt a dopyt",
-    contact_text:"Vyplňte formulár a dopyt nám pošlite cez WhatsApp alebo e-mail. Dopyt je nezáväzný, termín potvrdíme, keď sa vám ozveme.",
+    contact_text:"Vyplňte formulár a dopyt nám príde priamo. Je nezáväzný – ozveme sa vám čo najskôr a termín potvrdíme.",
     contact_cal:"Voľné termíny nájdete v kalendári pri vozidle.",
     f_name:"Meno a priezvisko", f_email:"E-mail", f_phone:"Telefón", f_from:"Odchod", f_to:"Návrat", f_people:"Počet osôb", f_vehicle:"Vozidlo", f_msg:"Kam sa chystáte? (nepovinné)",
     f_extras:"Doplnky za príplatok (nepovinné)",
@@ -681,7 +699,7 @@ const I18N = {
     f_err_order:"Deň návratu musí byť po dni odchodu.",
     f_err_booked:"Vo vybranom termíne je obsadený deň. Pozrite sa do kalendára.",
     f_prefilled:"Termín z kalendára je predvyplnený.",
-    ho_title:"Dopyt je pripravený. Pošlite nám ho:",
+    ho_title:"Dopyt sa nepodarilo odoslať automaticky. Pošlite nám ho, prosím, jedným z týchto spôsobov:", f_err_email:"Skontrolujte, prosím, e-mail – vyzerá neúplne.", f_err_phone:"Skontrolujte, prosím, telefónne číslo – má mať aspoň 9 číslic.",
     ho_wa:"Poslať cez WhatsApp", ho_mail:"Poslať e-mailom", ho_copy:"Skopírovať text", ho_copied:"Skopírované",
     ho_note:"Ak sa aplikácia neotvorí, skopírujte text a pošlite ho na kontakt nižšie.",
     c_phone:"Telefón a WhatsApp", c_email:"E-mail", c_ig:"Instagram", c_place:"Miesto prevzatia", c_area:"Ostrava-Poruba, pri VŠB",
@@ -719,7 +737,7 @@ const I18N = {
     how_place:"Ostrava-Poruba, nahe der VŠB – Technische Universität Ostrava. Die genaue Adresse schicken wir nach Bestätigung der Buchung.",
     map_link:"Umgebung der VŠB auf Mapy.cz ↗",
     contact_eyebrow:"Kontakt", contact_title:"Kontakt und Anfrage",
-    contact_text:"Füllen Sie das Formular aus und senden Sie uns Ihre Anfrage per WhatsApp oder E-Mail. Die Anfrage ist unverbindlich – wir bestätigen den Termin, sobald wir uns melden.",
+    contact_text:"Füllen Sie das Formular aus – Ihre Anfrage kommt direkt bei uns an. Sie ist unverbindlich – wir melden uns so schnell wie möglich und bestätigen den Termin.",
     contact_cal:"Freie Termine finden Sie im Kalender beim Fahrzeug.",
     f_name:"Vor- und Nachname", f_email:"E-Mail", f_phone:"Telefon", f_from:"Abreise", f_to:"Rückgabe", f_people:"Personenzahl", f_vehicle:"Fahrzeug", f_msg:"Wohin soll es gehen? (optional)",
     f_extras:"Extras gegen Aufpreis (optional)",
@@ -728,7 +746,7 @@ const I18N = {
     f_err_order:"Der Rückgabetag muss nach dem Abreisetag liegen.",
     f_err_booked:"Im gewählten Zeitraum ist ein Tag belegt. Bitte sehen Sie im Kalender nach.",
     f_prefilled:"Der Termin aus dem Kalender ist eingetragen.",
-    ho_title:"Ihre Anfrage ist fertig. Senden Sie sie uns:",
+    ho_title:"Ihre Anfrage konnte nicht automatisch gesendet werden. Bitte senden Sie sie uns auf einem dieser Wege:", f_err_email:"Bitte prüfen Sie Ihre E-Mail-Adresse – sie scheint unvollständig zu sein.", f_err_phone:"Bitte prüfen Sie Ihre Telefonnummer – sie sollte mindestens 9 Ziffern haben.",
     ho_wa:"Per WhatsApp senden", ho_mail:"Per E-Mail senden", ho_copy:"Text kopieren", ho_copied:"Kopiert",
     ho_note:"Falls sich die App nicht öffnet, kopieren Sie den Text und senden Sie ihn an einen der Kontakte unten.",
     c_phone:"Telefon und WhatsApp", c_email:"E-Mail", c_ig:"Instagram", c_place:"Abholort", c_area:"Ostrava-Poruba, an der VŠB",
@@ -898,6 +916,7 @@ function contactSection(){
     '<fieldset class="xf"><legend>'+esc(t("f_extras"))+'</legend><div id="xChecks" class="xchecks">'+extrasChecks(vid)+'</div></fieldset>'+
     '<label class="f">'+esc(t("f_msg"))+'<textarea id="f-msg"></textarea></label>'+
     '<p class="err-msg" id="f-err" hidden></p>'+
+    '<p class="hp" aria-hidden="true"><label>bot<input id="f-bot" name="bot-field" tabindex="-1" autocomplete="off"></label></p>'+
     '<div><button class="btn btn-primary" type="submit">'+esc(t("f_submit"))+'</button></div></form>'+
     '<div class="handoff" id="handoff" hidden></div></div>'+
   '<aside class="ccards">'+
@@ -911,7 +930,7 @@ function contactSection(){
 function pageHome(){
   const v0=VEHICLES[0];
   return '<section class="hero" id="uvod" style="background-image:url('+v0.cover+')"><div class="wrap fade">'+
-    '<div class="eyebrow">'+mark("red")+'<span><span class="wm hero-wm">'+wordmark()+'</span> · '+esc(t("brand_sub"))+'</span></div><h1>'+esc(t("hero_title"))+'</h1><p>'+esc(t("hero_text"))+'</p>'+
+    '<div class="eyebrow">'+mark("red")+'<span>'+esc(t("brand_sub"))+'</span></div><h1>'+esc(t("hero_title"))+'</h1><p>'+esc(t("hero_text"))+'</p>'+
     '<div class="btns"><a class="btn btn-primary" href="#vozy">'+esc(t("hero_cta"))+'</a><a class="btn btn-ghost" href="#jak-to-funguje">'+esc(t("hero_link"))+'</a></div></div></section>'+
   '<section class="band alt" id="vozy"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("green")+esc(t("fleet_eyebrow"))+'</div><h2>'+esc(t("fleet_title"))+'</h2></div>'+
     '<div class="vlist">'+VEHICLES.map(vehicleCard).join("")+'</div>'+
@@ -949,7 +968,27 @@ function vehicleDetail(v){
     '<div id="udaje" class="vblock"><h2 class="vh2">'+esc(t("van_spec"))+'</h2><div class="spec-wrap"><table class="spec"><tbody>'+
       v.specs.map(r=>'<tr><th scope="row">'+esc(L(r[0]))+'</th><td>'+esc(L(r[1]))+'</td></tr>').join("")+'</tbody></table></div></div>'+
     ((v.faq&&v.faq.length)?'<div id="faq" class="vblock"><h2 class="vh2">'+esc(t("van_faq"))+'</h2>'+faqHtml(v.faq)+'</div>':'')+
-    '</div></section>'+contactSection();
+    '</div></section>'+contactSection()+
+    '<div class="mbar" id="mbar" data-v="'+v.id+'">'+mbarInner(v.id)+'</div><div class="mbar-space" aria-hidden="true"></div>';
+}
+function mbarInner(vid){
+  const s=sel[vid]||{};
+  const main = (s.a&&s.b)
+    ? '<button type="button" class="btn btn-primary" data-mbar="ask"><span>'+esc(t("cal_send"))+'</span><small>'+esc(fmt(s.a))+' – '+esc(fmt(s.b))+'</small></button>'
+    : '<button type="button" class="btn btn-primary" data-jump="terminy">'+esc(t("van_pick"))+'</button>';
+  return main+'<a class="btn btn-solid mbar-wa" href="https://wa.me/'+CONTACT.whatsapp+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+icon("wa")+'<span>WhatsApp</span></a>';
+}
+function updateMbar(vid){ const m=$("#mbar"); if(m && m.dataset.v===vid) m.innerHTML=mbarInner(vid); }
+let mbarObs=null;
+function setupMbar(){
+  if(mbarObs){ mbarObs.disconnect(); mbarObs=null; }
+  const m=$("#mbar"), k=$("#kontakt"); if(!m||!k||!("IntersectionObserver" in window)) return;
+  mbarObs=new IntersectionObserver(es=>{ es.forEach(en=>m.classList.toggle("mbar-off", en.isIntersecting)); },{rootMargin:"0px 0px -30% 0px"});
+  mbarObs.observe(k);
+}
+function askFor(vid){
+  const s=sel[vid]||{}; const snap=snapshotForm(); prefill={a:s.a,b:s.b,vehicle:vid}; const k=$("#kontakt");
+  if(k){ k.outerHTML=contactSection(); if(snap){ delete snap["f-from"]; delete snap["f-to"]; restoreForm(snap); } setupMbar(); scrollToId("kontakt", true); } else location.hash="kontakt";
 }
 
 function calHtml(vid, admin){
@@ -1013,6 +1052,7 @@ function render(opts){
   app.innerHTML = rt.page==="vehicle" ? vehicleDetail(rt.v) : rt.page==="admin" ? pageAdmin() : pageHome();
   $("#mainNav").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded","false");
   const changedPage = key!==currentPage; currentPage=key;
+  setupMbar();
   if(rt.page==="vehicle") preloadPhotos(rt.v);
   if(opts && opts.keepScroll) return;
   const target = rt.page==="vehicle" ? (rt.section||null) : (rt.section==="uvod" ? null : rt.section);
@@ -1066,6 +1106,7 @@ document.addEventListener("click", async e=>{
   // same-hash link clicks don't fire hashchange: scroll manually
   const a=e.target.closest('a[href^="#"]');
   if(a && a.getAttribute("href")===location.hash){ e.preventDefault(); render(); return; }
+  const mb=e.target.closest("[data-mbar='ask']"); if(mb){ askFor(mb.closest("#mbar").dataset.v); return; }
   const jump=e.target.closest("[data-jump]"); if(jump){ scrollToId(jump.dataset.jump, true); return; }
   const th=e.target.closest(".thumbs button"); if(th){ galShow(th.closest(".gallery"), +th.dataset.i); return; }
   const gn=e.target.closest(".gal-nav"); if(gn){ e.preventDefault(); const g=gn.classList.contains("lb-nav") ? lbGallery : gn.closest(".gallery"); if(g) galStep(g, +gn.dataset.dir); return; }
@@ -1083,12 +1124,11 @@ document.addEventListener("click", async e=>{
       else if(k===s.a){ s.a=null; }
       else if(rangeHasBooked(vid,s.a,k)){ box.outerHTML=calHtml(vid,false); const st=$('[data-cal="'+vid+'"] .cal-status'); st.textContent=t("cal_conflict"); st.classList.add("err"); return; }
       else s.b=k;
-      box.outerHTML=calHtml(vid,false);
+      box.outerHTML=calHtml(vid,false); updateMbar(vid);
       if(s.a&&s.b){ const f=$("#f-from"), tt=$("#f-to"); if(f&&tt){ f.value=s.a; tt.value=s.b; } prefill={a:s.a,b:s.b,vehicle:vid}; }
       return;
     }
-    if(e.target.closest("[data-act='ask']")){ const s=sel[vid]; const snap=snapshotForm(); prefill={a:s.a,b:s.b,vehicle:vid}; const k=$("#kontakt");
-      if(k){ k.outerHTML=contactSection(); if(snap){ delete snap["f-from"]; delete snap["f-to"]; restoreForm(snap); } scrollToId("kontakt", true); } else location.hash="kontakt"; return; }
+    if(e.target.closest("[data-act='ask']")){ askFor(vid); return; }
   }
   if(e.target.closest("#saveAvail")) saveAvail();
   const cp=e.target.closest("[data-copy]"); if(cp){ const txt=$("#hoText").textContent;
@@ -1120,6 +1160,9 @@ document.addEventListener("submit", async e=>{
   const err=$("#f-err"); err.hidden=true;
   if(!name||(!email&&!phone)||!a||!b){ err.textContent=t("f_err_req"); err.hidden=false; return; }
   if(b<=a){ err.textContent=t("f_err_order"); err.hidden=false; return; }
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent=t("f_err_email"); err.hidden=false; return; }
+  if(phone && phone.replace(/\D/g,"").length<9){ err.textContent=t("f_err_phone"); err.hidden=false; return; }
+  const bot=($("#f-bot")||{}).value||"";
   if(rangeHasBooked(vid,a,b)){ err.textContent=t("f_err_booked"); err.hidden=false; return; }
   const v=VEHICLES.find(x=>x.id===vid); const n=Math.round((fromIso(b)-fromIso(a))/864e5);
   const ex=[...document.querySelectorAll("#xChecks input:checked")].map(i=>{ const x=(v.extras||[]).find(e=>e.id===i.value); if(!x) return null;
@@ -1127,11 +1170,12 @@ document.addEventListener("submit", async e=>{
   const text=buildMessage({v,a,b,n,people,extras:ex,name,email,phone,msg});
   const subject=t("msg_subject")+" "+BRAND+": "+fmt(a)+" – "+fmt(b);
   const ho=$("#handoff");
-  const fd=new URLSearchParams({"form-name":"poptavka","bot-field":"",jmeno:name,email:email,telefon:phone,odjezd:a,navrat:b,noci:String(n),osob:people,vuz:v.name,doplnky:ex.join(", "),zprava:msg,jazyk:lang,text_poptavky:text});
+  const fd=new URLSearchParams({"form-name":"poptavka","bot-field":bot,jmeno:name,email:email,telefon:phone,odjezd:a,navrat:b,noci:String(n),osob:people,vuz:v.name,doplnky:ex.join(", "),zprava:msg,jazyk:lang,text_poptavky:text});
   const sendBtn=e.target.querySelector('button[type="submit"]'); if(sendBtn){ sendBtn.disabled=true; sendBtn.textContent=t("ho_sending"); }
   let saved=false;
   try{ const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:fd.toString()}); saved=r.ok; }catch(_){ saved=false; }
   if(sendBtn){ sendBtn.disabled=false; sendBtn.textContent=t("f_submit"); }
+  if(saved){ e.target.reset(); prefill=null; const xc=$("#xChecks"); if(xc) xc.innerHTML=extrasChecks(vid); }
   ho.innerHTML=(saved?'<p class="sent-ok">'+icon("check")+'<span>'+esc(t("ho_ok"))+'</span></p><b>'+esc(t("ho_ok_more"))+'</b>':'<b>'+esc(t("ho_title"))+'</b>')+'<pre id="hoText">'+esc(text)+'</pre>'+
     '<div class="btns" style="margin-top:0"><a class="btn btn-solid" id="waLink" target="_blank" rel="noopener" href="https://wa.me/'+CONTACT.whatsapp+'?text='+encodeURIComponent(text)+'">'+icon("wa")+esc(t("ho_wa"))+'</a>'+
     '<a class="btn btn-line" id="mailLink" href="mailto:'+CONTACT.email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text)+'">'+icon("mail")+esc(t("ho_mail"))+'</a>'+

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Stránka nenalezena · VANDR na čtyřech kolech</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3CclipPath id=%22fv-tile%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23fv-tile)%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%2324452F%22/%3E%3Ccircle cx=%2247%22 cy=%2216%22 r=%227%22 fill=%22%23D8913A%22/%3E%3Cpath d=%22M0 38 L13 25 L21 31 L33 17 L45 31 L53 26 L64 33 V64 H0 Z%22 fill=%22%235E8C66%22/%3E%3Cg transform=%22translate(1.5 24.5) scale(0.31)%22%3E%3Cpath d=%22M12 87 Q8 87 8 82 V19 Q8 12 15 12 H146 Q156 12 161 20 L175 46 Q177 49 181 50 L189 53 Q195 55 196 61 V80 Q196 87 190 87 H174 A17 17 0 0 0 140 87 H68 A17 17 0 0 0 34 87 Z%22 fill=%22%23F3EEDF%22/%3E%3Cpath d=%22M22 25 H136 V48 H22 Z%22 fill=%22%2324452F%22/%3E%3Cpath d=%22M141 25 H151 Q156 25 158.5 29.5 L167 46 Q167.6 47 166 47 H141 Z%22 fill=%22%2324452F%22/%3E%3Crect x=%228%22 y=%2260%22 width=%22182%22 height=%228%22 fill=%22%23C8102E%22/%3E%3Ccircle cx=%2251%22 cy=%2287%22 r=%2215%22 fill=%22%231B2620%22/%3E%3Ccircle cx=%2251%22 cy=%2287%22 r=%226%22 fill=%22%23F3EEDF%22/%3E%3Ccircle cx=%22157%22 cy=%2287%22 r=%2215%22 fill=%22%231B2620%22/%3E%3Ccircle cx=%22157%22 cy=%2287%22 r=%226%22 fill=%22%23F3EEDF%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{--bg:#EEF1EA;--surface:#fff;--fg:#1B2620;--muted:#56645A;--forest:#24452F;--ochre:#B7731F;--line:#C9D3C3}
+@media (prefers-color-scheme:dark){:root{--bg:#101814;--surface:#17221C;--fg:#E4EBE1;--muted:#9DAB9F;--forest:#8DBE8F;--ochre:#E1A04E;--line:#2D3D33}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--fg);font:17px/1.6 "Source Sans 3","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:24px 16px}
+main{max-width:560px;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(24px,5vw,44px);display:grid;gap:18px}
+.wm{font:800 1.6rem/1 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.04em;color:var(--fg);text-decoration:none}
+.wm span{font-weight:600;font-size:.62em;color:var(--ochre);letter-spacing:.02em;margin-left:.3em}
+.code{font:800 4.5rem/1 "Barlow Condensed","Arial Narrow",sans-serif;color:var(--ochre);margin:6px 0 0}
+.mark{display:inline-flex;flex-direction:column;width:34px;height:22px;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.mark i{flex:1;background:#fff}.mark i:nth-child(2){background:#C8102E}
+#msg{margin:0;color:var(--muted)} #msg b{color:var(--fg)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+a.btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border-radius:8px;font:700 1.05rem/1 "Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.06em;text-decoration:none}
+.p{background:var(--ochre);color:#1B1408}.s{box-shadow:inset 0 0 0 1.5px var(--line);color:var(--fg)}
+</style>
+</head>
+<body>
+<main>
+  <a class="wm" href="/">VANDR<span>na čtyřech kolech</span></a>
+  <div><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><p class="code">404</p></div>
+  <p id="msg"><b>Tady cesta končí.</b> Tahle stránka neexistuje.</p>
+  <div class="btns">
+    <a class="btn p" id="b1" href="/">Zpět na úvod</a>
+    <a class="btn s" id="b2" href="/#vozy">Naše vozy</a>
+  </div>
+<script>
+(function(){
+  var T={
+    cs:["Tady cesta končí.","Tahle stránka neexistuje.","Zpět na úvod","Naše vozy","Stránka nenalezena"],
+    sk:["Tu cesta končí.","Táto stránka neexistuje.","Späť na úvod","Naše vozidlá","Stránka sa nenašla"],
+    en:["The trail ends here.","This page doesn't exist.","Back to home","Our vans","Page not found"],
+    de:["Hier endet der Weg.","Diese Seite gibt es nicht.","Zur Startseite","Unsere Fahrzeuge","Seite nicht gefunden"]
+  };
+  var l=null; try{ l=localStorage.getItem("bv-lang"); }catch(e){}
+  if(!T[l]){ var n=(navigator.language||"cs").slice(0,2).toLowerCase(); l=T[n]?n:"cs"; }
+  var t=T[l]; document.documentElement.lang=l;
+  document.getElementById("msg").innerHTML="<b>"+t[0]+"</b> "+t[1];
+  document.getElementById("b1").textContent=t[2]; document.getElementById("b2").textContent=t[3];
+  document.title=t[4]+" · VANDR na čtyřech kolech";
+})();
+</script>
+</main>
+</body>
+</html>

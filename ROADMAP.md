@@ -22,18 +22,18 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 ## A · Rychlé opravy (bez podkladů)
 
-- [ ] A01 🤖 P1 – U formuláře opravit text „poptávku nám pošlete přes WhatsApp nebo e-mail“ – formulář už odesílá sám (4 jazyky).
-- [ ] A02 🤖 P1 – Upravit záložní texty pro případ, že se poptávka neuloží (aby dávaly smysl).
-- [ ] A03 🤖 P2 – V úvodní sekci odstranit zdvojený název značky pod logem, ponechat jen „Půjčovna obytných vozů · Ostrava“.
-- [ ] A04 🤖 P1 – Plovoucí lišta na mobilu (detail vozu): „Vybrat termín“ + „WhatsApp“.
+- [x] A01 🤖 P1 – U formuláře opravit text „poptávku nám pošlete přes WhatsApp nebo e-mail“ – formulář už odesílá sám (4 jazyky). (10. 11. 2026)
+- [x] A02 🤖 P1 – Upravit záložní texty pro případ, že se poptávka neuloží (aby dávaly smysl). (10. 11. 2026)
+- [x] A03 🤖 P2 – V úvodní sekci odstranit zdvojený název značky pod logem, ponechat jen „Půjčovna obytných vozů · Ostrava“. (10. 11. 2026)
+- [x] A04 🤖 P1 – Plovoucí lišta na mobilu (detail vozu): „Vybrat termín“ + „WhatsApp“. (10. 11. 2026)
 - [-] A05 – ~~Galerie: přednačítat jen sousední fotku~~ – **zrušeno (10. 11. 2026):** Michael nechce, podobná úprava dříve způsobila sekání galerie. Přednačítání všech fotek zůstává.
-- [ ] A06 🤖 P2 – Písma (Barlow Condensed, Source Sans 3) nahrát přímo na web místo Google Fonts (GDPR + rychlost).
-- [ ] A07 🤖 P3 – Vlastní stránka 404.
-- [ ] A08 🤖 P2 – Větší klikací plocha odkazů v kontaktech (telefon, e-mail, WhatsApp, Instagram) – min. 44 px.
-- [ ] A09 🤖 P3 – Náhledy v galerii: popisky pro čtečky („Fotka 3 z 9“).
-- [ ] A10 🤖 P2 – Antispam: skryté pole (honeypot) i ve viditelném formuláři + kontrola formátu e-mailu a telefonu.
-- [ ] A11 🤖 P2 – Zabránit dvojímu odeslání poptávky, po odeslání formulář vyčistit.
-- [ ] A12 🤖 P3 – Kalendář na mobilu: tlačítko „Poptat tento termín“ držet stále na očích po výběru dat.
+- [ ] A06 🙋 P2 – Písma (Barlow Condensed, Source Sans 3) nahrát přímo na web místo Google Fonts (GDPR + rychlost). **Claude je odsud nestáhne (síť blokuje)** → Michael stáhne z fonts.google.com („Get font“ → „Download all“) oba balíčky ZIP a pošle je; Claude je zapracuje.
+- [x] A07 🤖 P3 – Vlastní stránka 404. (10. 11. 2026)
+- [x] A08 🤖 P2 – Větší klikací plocha odkazů v kontaktech (telefon, e-mail, WhatsApp, Instagram) – min. 44 px. (10. 11. 2026)
+- [x] A09 🤖 P3 – Náhledy v galerii: popisky pro čtečky („Fotka 3 z 9“). (10. 11. 2026)
+- [x] A10 🤖 P2 – Antispam: skryté pole (honeypot) i ve viditelném formuláři + kontrola formátu e-mailu a telefonu. (10. 11. 2026)
+- [x] A11 🤖 P2 – Zabránit dvojímu odeslání poptávky, po odeslání formulář vyčistit. (10. 11. 2026)
+- [x] A12 🤖 P3 – Kalendář na mobilu: tlačítko „Poptat tento termín“ držet stále na očích po výběru dat (řeší plovoucí lišta z A04). (10. 11. 2026)
 
 ## B · Ceník a podmínky pronájmu (největší brzda poptávek)
 
@@ -182,7 +182,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 ## Doporučené pořadí
 
-1. **Balík rychlých oprav** (🤖, jeden push): A01–A04, A06, A08, A10, A11.
+1. ~~Balík rychlých oprav~~ – hotovo 10. 11. 2026 (zbývá A06 – čeká na soubory písem).
 2. **Ceník a podmínky** – Michael pošle B01–B11 nahrubo, Claude udělá B12 + C03/C04.
 3. **Právní minimum** – C01, C02, C05, C06.
 4. **Fotky** – F01–F05 (stačí jedno odpoledne s dodávkou v přírodě).

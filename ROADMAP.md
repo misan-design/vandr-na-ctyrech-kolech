@@ -12,6 +12,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 ### Technické poznámky
 - Repo: `misan-design/vandr-na-ctyrech-kolech`, větev `main` → Netlify projekt `vandr-na-ctyrech-kolech` → doména `vandrnactyrech.cz` (DNS u Webglobe).
+- Změny jen v ROADMAP/README posílat s `[skip netlify]` v popisu commitu – Netlify pak nenasazuje a kredity se nečerpají.
 - **Každý push na `main` = 1 nasazení = 15 kreditů Netlify** (zdarma 300 kreditů/měsíc, 1 GB přenosu = 20 kreditů). Změny sdružovat do jednoho pushe.
 - Jazyky CZ/EN/SK/DE musí být **striktně oddělené** (žádné míchání). Výjimky: název značky, vlastní jména, stránka `#admin`.
 - Poptávky: Netlify Forms (formulář `poptavka`) → e-mail na Seznam, odtud kopie do Gmailu.
@@ -179,11 +180,16 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - Google firemní profil založen, čeká na ověření (9. 11. 2026)
 - Instagram @vandrnactyrech (9. 11. 2026)
 - Rozměry vozu 5 981 × 2 059 × 2 775 mm, celková výška ~3,1 m (9. 11. 2026)
+- Balík rychlých oprav A01–A04, A07–A12 (10. 11. 2026)
+- Sekce „Proč VANDR“, stránka ochrany osobních údajů + souhlas u formuláře, obrázek pro sdílení, ikony na plochu (10. 11. 2026)
+- Vypnuto dělení slov na mobilu, oprava přetékající patičky na úzkých telefonech 320 px (10. 11. 2026)
+- Body B01–B11 (ceník a podmínky) poslány taťkovi e-mailem – čeká se na odpověď (10. 11. 2026)
+- Rozhodnutí: plovoucí lišta jen na detailu vozu, ne na úvodu (10. 11. 2026)
 
 ## Doporučené pořadí
 
 1. ~~Balík rychlých oprav~~ – hotovo 10. 11. 2026 (zbývá A06 – čeká na soubory písem).
-2. **Ceník a podmínky** – Michael pošle B01–B11 nahrubo, Claude udělá B12 + C03/C04.
+2. **Ceník a podmínky** – čeká se na odpověď taťky (B01–B11), pak Claude udělá B12. C03/C04 hotovo.
 3. **Právní minimum** – C01, C02, C05, C06.
 4. **Fotky** – F01–F05 (stačí jedno odpoledne s dodávkou v přírodě).
 5. **Velká SEO přestavba** – D01–D06 (jeden větší krok).

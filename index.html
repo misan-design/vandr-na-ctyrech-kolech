@@ -12,7 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="VANDR na čtyřech kolech – půjčovna obytné dodávky Ostrava">
 <meta property="og:description" content="Obytná dodávka Ford Transit s kuchyňkou, topením a solárem. Vyzvednutí v Ostravě-Porubě u VŠB.">
-<meta property="og:image" content="https://vandrnactyrech.cz/img/hero.jpg">
+<meta property="og:image" content="https://vandrnactyrech.cz/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#24452F">
 <meta property="og:url" content="https://vandrnactyrech.cz/">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
@@ -374,6 +379,18 @@ footer .wm span{font-size:.6em}
 .ccard-sub{min-height:44px}
 .foot-link{min-height:44px}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+/* Proč VANDR, GDPR */
+.why{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(16px,2.5vw,24px)}
+.why li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,28px);display:grid;gap:10px;align-content:start}
+.why .ic{width:44px;height:44px;border-radius:10px;background:var(--ochre-soft);color:var(--ochre);display:grid;place-items:center}
+.why .ic svg{width:24px;height:24px}
+.why b{font-family:var(--f-display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em}
+.why p{color:var(--muted);margin:0}
+.consent{margin:0}
+.priv{max-width:780px}
+.priv .vh3{margin-top:28px}
+.priv p{margin:8px 0 0}
+footer .foot-meta a{color:inherit}
 @media (prefers-reduced-motion:no-preference){.fade{animation:fade .35s ease both}@keyframes fade{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
 </style>
 
@@ -581,6 +598,7 @@ const I18N = {
     s1t:"Vyberete vůz a termín", s1p:"Prohlédnete si vůz a v kalendáři vyberete datum odjezdu a návratu.",
     s2t:"Pošlete nezávaznou poptávku", s2p:"Domluvíme podrobnosti a potvrdíme dostupnost. Odesláním poptávky ještě nevzniká rezervace.",
     s3t:"Převezmete vůz a vyrazíte", s3p:"V Ostravě-Porubě vám vůz předáme a ukážeme jeho obsluhu.",
+    why_eyebrow:"Proč VANDR", why_title:"Víc než jen auto na víkend", why1t:"Osobní přístup", why1p:"Nejsme velká půjčovna. Při převzetí vám vše v klidu ukážeme, vysvětlíme a poradíme, kam vyrazit.", why2t:"Obytňák i výlet na vodu", why2p:"K vozu si můžete půjčit kánoi, paddleboard nebo stan – všechno na jednom místě.", why3t:"Kancelář s výhledem", why3p:"Pracujete z domova? Vezměte práci s sebou a pracujte s výhledem na hory nebo jezero.", why4t:"Hory kousek za Ostravou", why4p:"Beskydy začínají hned za městem. Jeseníky i Slovensko máte co by kamenem dohodil.", foot_privacy:"Ochrana osobních údajů", f_consent:"Odesláním poptávky berete na vědomí zpracování údajů podle", f_consent_link:"zásad ochrany osobních údajů",
     post_eyebrow:"Inspirace na výlety", post_title:"Kam vyrazíte?",
     post_text:"Beskydy, Jeseníky nebo Slovensko? Inspirujte se několika cíli pro svou cestu.",
     post_note:"Na horské vrcholy se chodí pěšky, autem dojedete jen k parkovištím pod horami.",
@@ -628,6 +646,7 @@ const I18N = {
     s1t:"Choose a van and dates", s1p:"Have a look at the van and pick your departure and return dates in the calendar.",
     s2t:"Send a free enquiry", s2p:"We'll agree on the details and confirm availability. An enquiry is not yet a booking.",
     s3t:"Pick up the van and go", s3p:"We hand over the van in Ostrava-Poruba and show you how everything works.",
+    why_eyebrow:"Why VANDR", why_title:"More than just a weekend van", why1t:"A personal touch", why1p:"We're not a big rental company. At pick-up we'll calmly show you everything, explain how it works and suggest where to go.", why2t:"Campervan plus a day on the water", why2p:"Rent a canoe, a paddleboard or a tent with the van – everything in one place.", why3t:"An office with a view", why3p:"Working from home? Take your work with you and enjoy a view of the mountains or a lake.", why4t:"Mountains right next to Ostrava", why4p:"The Beskydy mountains start just outside the city. The Jeseníky mountains and Slovakia are close by, too.", foot_privacy:"Privacy policy", f_consent:"By sending your enquiry you acknowledge that we process your data as described in our", f_consent_link:"privacy policy",
     post_eyebrow:"Trip ideas", post_title:"Where will you go?",
     post_text:"The Beskydy, the Jeseníky or Slovakia? Here are a few ideas for your trip.",
     post_note:"Mountain summits are reached on foot – by van you can only drive to car parks below the mountains.",
@@ -675,6 +694,7 @@ const I18N = {
     s1t:"Vyberiete vozidlo a termín", s1p:"Pozriete si vozidlo a v kalendári vyberiete dátum odchodu a návratu.",
     s2t:"Pošlete nezáväzný dopyt", s2p:"Dohodneme podrobnosti a potvrdíme dostupnosť. Odoslaním dopytu ešte nevzniká rezervácia.",
     s3t:"Prevezmete vozidlo a vyrazíte", s3p:"V Ostrave-Porube vám vozidlo odovzdáme a ukážeme, ako sa obsluhuje.",
+    why_eyebrow:"Prečo VANDR", why_title:"Viac než len auto na víkend", why1t:"Osobný prístup", why1p:"Nie sme veľká požičovňa. Pri prevzatí vám všetko v pokoji ukážeme, vysvetlíme a poradíme, kam vyraziť.", why2t:"Obytné auto aj výlet na vodu", why2p:"K vozidlu si môžete požičať kanoe, paddleboard alebo stan – všetko na jednom mieste.", why3t:"Kancelária s výhľadom", why3p:"Pracujete z domu? Vezmite si prácu so sebou a pracujte s výhľadom na hory alebo jazero.", why4t:"Hory kúsok za Ostravou", why4p:"Beskydy začínajú hneď za mestom. Jeseníky aj Slovensko máte len kúsok odtiaľ.", foot_privacy:"Ochrana osobných údajov", f_consent:"Odoslaním dopytu beriete na vedomie spracovanie údajov podľa", f_consent_link:"zásad ochrany osobných údajov",
     post_eyebrow:"Inšpirácia na výlety", post_title:"Kam vyrazíte?",
     post_text:"Beskydy, Jeseníky alebo Slovensko? Inšpirujte sa niekoľkými cieľmi pre svoju cestu.",
     post_note:"Na horské vrcholy sa chodí pešo, autom dôjdete len na parkoviská pod horami.",
@@ -722,6 +742,7 @@ const I18N = {
     s1t:"Fahrzeug und Termin wählen", s1p:"Sehen Sie sich das Fahrzeug an und wählen Sie im Kalender Abreise- und Rückgabedatum.",
     s2t:"Unverbindlich anfragen", s2p:"Wir klären die Details und bestätigen die Verfügbarkeit. Eine Anfrage ist noch keine Buchung.",
     s3t:"Fahrzeug abholen und losfahren", s3p:"In Ostrava-Poruba übergeben wir Ihnen das Fahrzeug und erklären die Bedienung.",
+    why_eyebrow:"Warum VANDR", why_title:"Mehr als nur ein Auto fürs Wochenende", why1t:"Persönlicher Service", why1p:"Wir sind kein großer Vermieter. Bei der Übergabe zeigen und erklären wir Ihnen alles in Ruhe und geben Tipps für Ihre Route.", why2t:"Campervan und Ausflug aufs Wasser", why2p:"Zum Fahrzeug können Sie ein Kanu, ein Paddleboard oder ein Zelt mieten – alles aus einer Hand.", why3t:"Büro mit Aussicht", why3p:"Sie arbeiten im Homeoffice? Nehmen Sie die Arbeit einfach mit – mit Blick auf Berge oder einen See.", why4t:"Berge gleich hinter Ostrava", why4p:"Die Beskiden beginnen direkt hinter der Stadt. Auch das Altvatergebirge und die Slowakei sind nicht weit.", foot_privacy:"Datenschutz", f_consent:"Mit dem Absenden Ihrer Anfrage nehmen Sie die Verarbeitung Ihrer Daten gemäß unserer", f_consent_link:"Datenschutzerklärung zur Kenntnis",
     post_eyebrow:"Ausflugsideen", post_title:"Wohin geht die Reise?",
     post_text:"Beskiden, Altvatergebirge oder die Slowakei? Ein paar Ziele zur Inspiration.",
     post_note:"Die Gipfel erreichen Sie zu Fuß – mit dem Fahrzeug kommen Sie nur bis zu den Parkplätzen am Fuß der Berge.",
@@ -833,6 +854,9 @@ const IC = {
   phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
   mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
   ig:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+  hand:'<path d="M7 11v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3zm0 0 4-7a2 2 0 0 1 3 2l-1 4h5a2 2 0 0 1 2 2.3l-1 6A2 2 0 0 1 17 20H9a2 2 0 0 1-2-2"/>',
+  laptop:'<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
+  mountain:'<path d="M3 20 10 8l4 6 2-3 5 9z"/><path d="M8.5 10.5 10 12l1.5-1.5"/>',
   wa:'<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1-1.2 1.8.8-.4 1.6c-3 .4-7.6-4.2-7.2-7.2l1.6-.4.8 1.8z"/>',
 };
 const icon = k => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(IC[k]||"")+'</svg>';
@@ -848,13 +872,15 @@ function extrasChecks(vid){ const v=VEHICLES.find(x=>x.id===vid)||VEHICLES[0]; c
    Home sections: #uvod #vozy #jak-to-funguje #kam #kontakt
    Vehicle detail: #vuz-<id>, optional section suffix: -terminy -doplnky -faq
    Old hashes: #vuz → #vozy, #faq → first vehicle FAQ */
-const HOME_SECTIONS = ["uvod","vozy","jak-to-funguje","kam","kontakt"];
+const HOME_SECTIONS = ["uvod","vozy","proc","jak-to-funguje","kam","kontakt"];
+const PRIVACY = {"cs": {"title": "Ochrana osobních údajů", "updated": "Platné od 10. 11. 2026", "sec": [["Kdo vaše údaje zpracovává", "Michael Tomíček, provozovatel půjčovny VANDR na čtyřech kolech (Ostrava). Kontakt: tomicekmichael@gmail.com, +420 605 267 664."], ["Jaké údaje zpracováváme", "Údaje, které vyplníte v poptávkovém formuláři: jméno, e-mail, telefon, termín, počet osob, vybraný vůz a doplňky a vaši zprávu."], ["Proč je zpracováváme", "Abychom mohli odpovědět na vaši poptávku a domluvit pronájem. Jde o jednání o smlouvě na vaši žádost (čl. 6 odst. 1 písm. b GDPR)."], ["Komu údaje předáváme", "Poptávka se uloží u poskytovatele hostingu tohoto webu Netlify, Inc. (USA) a přijde nám e-mailem (Seznam.cz, Gmail). Předávání do USA probíhá na základě záruk podle GDPR, které tito poskytovatelé nabízejí. Údaje nikomu neprodáváme a nepoužíváme je k reklamě."], ["Jak dlouho je uchováváme", "Nejdéle 12 měsíců od poslední komunikace. Pokud dojde k pronájmu, uchováváme údaje po dobu, kterou nám ukládají zákony (např. účetní předpisy)."], ["Cookies a měření", "Web nepoužívá sledovací cookies ani analytické nástroje. Váš prohlížeč si pamatuje jen zvolený jazyk. Písma webu se zatím načítají ze služby Google Fonts – váš prohlížeč při tom společnosti Google sdělí svou IP adresu."], ["Vaše práva", "Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování a právo vznést námitku. Stačí nám napsat. Můžete také podat stížnost u Úřadu pro ochranu osobních údajů (uoou.gov.cz)."]]}, "en": {"title": "Privacy policy", "updated": "Effective from 10 November 2026", "sec": [["Who processes your data", "Michael Tomíček, operator of the VANDR na čtyřech kolech campervan rental (Ostrava). Contact: tomicekmichael@gmail.com, +420 605 267 664."], ["What data we process", "The details you enter in the enquiry form: name, e-mail, phone, dates, number of people, the chosen vehicle and extras, and your message."], ["Why we process it", "To reply to your enquiry and arrange the rental. This is pre-contractual processing at your request (Art. 6(1)(b) GDPR)."], ["Who we share it with", "Your enquiry is stored by this website's hosting provider Netlify, Inc. (USA) and sent to us by e-mail (Seznam.cz, Gmail). Transfers to the USA rely on the GDPR safeguards these providers offer. We never sell your data or use it for advertising."], ["How long we keep it", "For no longer than 12 months after our last contact. If you rent a vehicle, we keep the data for as long as the law requires (e.g. accounting rules)."], ["Cookies and analytics", "This website uses no tracking cookies or analytics tools. Your browser only remembers your chosen language. For now, the website's fonts are loaded from Google Fonts, which means your browser shares its IP address with Google."], ["Your rights", "You have the right to access, correct or delete your data, to restrict its processing and to object. Just write to us. You can also lodge a complaint with the Czech Office for Personal Data Protection (uoou.gov.cz)."]]}, "sk": {"title": "Ochrana osobných údajov", "updated": "Platné od 10. 11. 2026", "sec": [["Kto spracúva vaše údaje", "Michael Tomíček, prevádzkovateľ požičovne VANDR na čtyřech kolech (Ostrava). Kontakt: tomicekmichael@gmail.com, +420 605 267 664."], ["Aké údaje spracúvame", "Údaje, ktoré vyplníte v dopytovom formulári: meno, e-mail, telefón, termín, počet osôb, vybrané vozidlo a doplnky a vašu správu."], ["Prečo ich spracúvame", "Aby sme mohli odpovedať na váš dopyt a dohodnúť prenájom. Ide o rokovanie o zmluve na vašu žiadosť (čl. 6 ods. 1 písm. b GDPR)."], ["Komu údaje odovzdávame", "Dopyt sa uloží u poskytovateľa hostingu tohto webu Netlify, Inc. (USA) a príde nám e-mailom (Seznam.cz, Gmail). Prenos do USA prebieha na základe záruk podľa GDPR, ktoré títo poskytovatelia ponúkajú. Údaje nikomu nepredávame a nepoužívame ich na reklamu."], ["Ako dlho ich uchovávame", "Najdlhšie 12 mesiacov od poslednej komunikácie. Ak dôjde k prenájmu, uchovávame údaje po dobu, ktorú nám ukladajú zákony (napr. účtovné predpisy)."], ["Cookies a meranie", "Web nepoužíva sledovacie cookies ani analytické nástroje. Váš prehliadač si pamätá iba zvolený jazyk. Písma webu sa zatiaľ načítavajú zo služby Google Fonts – váš prehliadač pritom spoločnosti Google oznámi svoju IP adresu."], ["Vaše práva", "Máte právo na prístup k svojim údajom, ich opravu alebo vymazanie, obmedzenie spracúvania a právo namietať. Stačí nám napísať. Môžete tiež podať sťažnosť na českom Úrade pre ochranu osobných údajov (uoou.gov.cz)."]]}, "de": {"title": "Datenschutzerklärung", "updated": "Gültig ab 10.11.2026", "sec": [["Wer Ihre Daten verarbeitet", "Michael Tomíček, Betreiber der Wohnmobilvermietung VANDR na čtyřech kolech (Ostrava). Kontakt: tomicekmichael@gmail.com, +420 605 267 664."], ["Welche Daten wir verarbeiten", "Die Angaben aus dem Anfrageformular: Name, E-Mail, Telefon, Reisezeitraum, Personenzahl, gewähltes Fahrzeug und Extras sowie Ihre Nachricht."], ["Warum wir sie verarbeiten", "Um Ihre Anfrage zu beantworten und die Miete zu vereinbaren. Es handelt sich um vorvertragliche Maßnahmen auf Ihre Anfrage (Art. 6 Abs. 1 lit. b DSGVO)."], ["An wen wir Daten weitergeben", "Ihre Anfrage wird beim Hosting-Anbieter dieser Website, Netlify, Inc. (USA), gespeichert und uns per E-Mail zugestellt (Seznam.cz, Gmail). Die Übermittlung in die USA erfolgt auf Grundlage der Garantien nach DSGVO, die diese Anbieter bereitstellen. Wir verkaufen Ihre Daten nicht und nutzen sie nicht für Werbung."], ["Wie lange wir sie speichern", "Höchstens 12 Monate nach dem letzten Kontakt. Kommt eine Miete zustande, speichern wir die Daten so lange, wie es gesetzlich vorgeschrieben ist (z. B. Buchhaltungsvorschriften)."], ["Cookies und Analyse", "Diese Website verwendet keine Tracking-Cookies und keine Analysetools. Ihr Browser speichert nur die gewählte Sprache. Die Schriften der Website werden derzeit über Google Fonts geladen – dabei übermittelt Ihr Browser seine IP-Adresse an Google."], ["Ihre Rechte", "Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten, auf Einschränkung der Verarbeitung und auf Widerspruch. Schreiben Sie uns einfach. Sie können sich außerdem bei der tschechischen Datenschutzbehörde beschweren (uoou.gov.cz)."]]}};
 const ROUTES = [["uvod","nav_home"],["vozy","nav_van"],["jak-to-funguje","nav_how"],["kontakt","nav_contact"]];
 function parseRoute(){
   let h=(location.hash||"").replace(/^#\/?/,"")||"uvod";
   if(h==="vuz") h="vozy";
   if(h==="faq") h="vuz-"+VEHICLES[0].id+"-faq";
   if(h==="admin") return {page:"admin"};
+  if(h==="soukromi") return {page:"privacy"};
   if(h.startsWith("vuz-")){
     const rest=h.slice(4);
     const v=VEHICLES.find(x=>rest===x.id||rest.startsWith(x.id+"-"));
@@ -888,7 +914,7 @@ function renderChrome(rt){
   $("#mainNav").insertAdjacentHTML("beforeend",'<div class="lang lang-m" role="group" aria-label="'+esc(t("lang_label"))+'">'+lb+'</div>');
   $("#foot").innerHTML = '<div class="foot-brand-wrap"><svg class="foot-emblem" viewBox="'+EMBLEM_VB+'" role="img" aria-label="'+esc(BRAND)+'">'+EMBLEM_SVG+'</svg><div><div class="foot-brand"><span class="wm">'+wordmark()+'</span></div><div class="foot-sub">'+esc(t("brand_sub"))+'</div></div></div>'+
     '<div class="foot-contacts">'+contactLinks("foot-link")+'</div>'+
-    '<div class="foot-meta">© '+new Date().getFullYear()+' '+esc(BRAND)+' · '+esc(t("c_area"))+(canEdit?' · <a href="#admin">'+esc(t("foot_admin"))+'</a>':'')+'</div>';
+    '<div class="foot-meta">© '+new Date().getFullYear()+' '+esc(BRAND)+' · '+esc(t("c_area"))+' · <a href="#soukromi">'+esc(t("foot_privacy"))+'</a>'+(canEdit?' · <a href="#admin">'+esc(t("foot_admin"))+'</a>':'')+'</div>';
 }
 $("#menuBtn").addEventListener("click", ()=>{ const n=$("#mainNav"); const o=!n.classList.contains("open"); n.classList.toggle("open",o); $("#menuBtn").setAttribute("aria-expanded",o); });
 
@@ -904,7 +930,7 @@ function vehicleCard(v){
 function contactSection(){
   const p=prefill||{};
   const vid=p.vehicle||VEHICLES[0].id;
-  return '<section class="band" id="kontakt"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("red")+esc(t("contact_eyebrow"))+'</div><h2>'+esc(t("contact_title"))+'</h2><p class="lead">'+esc(t("contact_text"))+'</p></div>'+
+  return '<section class="band alt" id="kontakt"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("red")+esc(t("contact_eyebrow"))+'</div><h2>'+esc(t("contact_title"))+'</h2><p class="lead">'+esc(t("contact_text"))+'</p></div>'+
   '<div class="cgrid"><div style="display:grid;gap:18px;min-width:0">'+
     (p.a&&p.b?'<p class="prefill-note">'+icon("check")+'<span>'+esc(t("f_prefilled"))+' '+esc(fmt(p.a))+' – '+esc(fmt(p.b))+'</span></p>':'<p class="fine">'+esc(t("contact_cal"))+' <a href="#vuz-'+vid+'-terminy">'+esc(t("van_cal_title"))+' →</a></p>')+
     '<form class="inq" id="inq" novalidate>'+
@@ -917,7 +943,8 @@ function contactSection(){
     '<label class="f">'+esc(t("f_msg"))+'<textarea id="f-msg"></textarea></label>'+
     '<p class="err-msg" id="f-err" hidden></p>'+
     '<p class="hp" aria-hidden="true"><label>bot<input id="f-bot" name="bot-field" tabindex="-1" autocomplete="off"></label></p>'+
-    '<div><button class="btn btn-primary" type="submit">'+esc(t("f_submit"))+'</button></div></form>'+
+    '<div><button class="btn btn-primary" type="submit">'+esc(t("f_submit"))+'</button></div>'+
+    '<p class="fine consent">'+esc(t("f_consent"))+' <a href="#soukromi">'+esc(t("f_consent_link"))+'</a>.</p></form>'+
     '<div class="handoff" id="handoff" hidden></div></div>'+
   '<aside class="ccards">'+
     '<div class="ccard"><span class="k">'+esc(t("c_phone"))+'</span><a class="v" href="tel:'+CONTACT.tel+'">'+esc(CONTACT.phone)+'</a>'+
@@ -935,9 +962,11 @@ function pageHome(){
   '<section class="band alt" id="vozy"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("green")+esc(t("fleet_eyebrow"))+'</div><h2>'+esc(t("fleet_title"))+'</h2></div>'+
     '<div class="vlist">'+VEHICLES.map(vehicleCard).join("")+'</div>'+
     '<p class="extras-line">'+esc(t("extras_line"))+' <a href="#vuz-'+v0.id+'-doplnky">'+esc(t("extras_link"))+' →</a></p></div></section>'+
-  '<section class="band" id="jak-to-funguje"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("yellow")+esc(t("how_eyebrow"))+'</div><h2>'+esc(t("how_title"))+'</h2></div>'+
+  '<section class="band why-band" id="proc"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("red")+esc(t("why_eyebrow"))+'</div><h2>'+esc(t("why_title"))+'</h2></div>'+
+    '<ul class="why">'+[["hand",1],["canoe",2],["laptop",3],["mountain",4]].map(w=>'<li><span class="ic">'+icon(w[0])+'</span><b>'+esc(t("why"+w[1]+"t"))+'</b><p>'+esc(t("why"+w[1]+"p"))+'</p></li>').join("")+'</ul></div></section>'+
+  '<section class="band alt" id="jak-to-funguje"><div class="wrap"><div class="sec-head"><div class="eyebrow">'+mark("yellow")+esc(t("how_eyebrow"))+'</div><h2>'+esc(t("how_title"))+'</h2></div>'+
     '<ol class="steps">'+[1,2,3].map(i=>'<li><b>'+esc(t("s"+i+"t"))+'</b><p>'+esc(t("s"+i+"p"))+'</p></li>').join("")+'</ol></div></section>'+
-  '<section class="band alt band-quiet" id="kam"><div class="wrap post"><div class="sec-head"><div class="eyebrow">'+mark("blue")+esc(t("post_eyebrow"))+'</div><h2>'+esc(t("post_title"))+'</h2><p class="lead">'+esc(t("post_text"))+'</p><p class="fine">'+esc(t("post_note"))+'</p></div>'+
+  '<section class="band band-quiet" id="kam"><div class="wrap post"><div class="sec-head"><div class="eyebrow">'+mark("blue")+esc(t("post_eyebrow"))+'</div><h2>'+esc(t("post_title"))+'</h2><p class="lead">'+esc(t("post_text"))+'</p><p class="fine">'+esc(t("post_note"))+'</p></div>'+
     '<div><div class="signs">'+DESTS.map((d,i)=>'<div class="sign">'+mark(["red","blue","green","yellow","red"][i])+'<span class="place">'+esc(L(d[0]))+'<small>'+esc(L(d[1]))+'</small></span></div>').join("")+'</div></div></div></section>'+
   contactSection();
 }
@@ -989,6 +1018,13 @@ function setupMbar(){
 function askFor(vid){
   const s=sel[vid]||{}; const snap=snapshotForm(); prefill={a:s.a,b:s.b,vehicle:vid}; const k=$("#kontakt");
   if(k){ k.outerHTML=contactSection(); if(snap){ delete snap["f-from"]; delete snap["f-to"]; restoreForm(snap); } setupMbar(); scrollToId("kontakt", true); } else location.hash="kontakt";
+}
+
+function pagePrivacy(){
+  const P=PRIVACY[lang]||PRIVACY.cs;
+  return '<section class="band vtop"><div class="wrap priv"><p class="crumb"><a href="#uvod">← '+esc(t("nav_home"))+'</a></p>'+
+    '<h1 class="vh1">'+esc(P.title)+'</h1><p class="fine">'+esc(P.updated)+'</p>'+
+    P.sec.map(x=>'<h2 class="vh3">'+esc(x[0])+'</h2><p>'+esc(x[1])+'</p>').join("")+'</div></section>';
 }
 
 function calHtml(vid, admin){
@@ -1049,7 +1085,7 @@ function render(opts){
   renderChrome(rt);
   const key = rt.page==="vehicle" ? "v:"+rt.v.id : rt.page;
   const app=$("#app");
-  app.innerHTML = rt.page==="vehicle" ? vehicleDetail(rt.v) : rt.page==="admin" ? pageAdmin() : pageHome();
+  app.innerHTML = rt.page==="vehicle" ? vehicleDetail(rt.v) : rt.page==="admin" ? pageAdmin() : rt.page==="privacy" ? pagePrivacy() : pageHome();
   $("#mainNav").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded","false");
   const changedPage = key!==currentPage; currentPage=key;
   setupMbar();

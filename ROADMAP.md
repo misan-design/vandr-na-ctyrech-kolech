@@ -48,7 +48,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] B09 🙋 P1 – Čas převzetí a vrácení, jak dlouho trvá předání.
 - [ ] B10 🙋 P1 – Pravidla: zvířata, kouření, cesty do zahraničí (které země ano/ne), festivaly.
 - [ ] B11 🙋 P1 – Co dělat při poruše nebo nehodě (kontakt, asistence).
-- [ ] B12 🤖 P1 – Z bodů B01–B11 udělat stránku „Ceník a podmínky“ ve 4 jazycích + aktualizovat časté dotazy („Kolik pronájem stojí?“, „Můžu vzít psa?“, „Můžu do zahraničí?“).
+- [ ] B12 🤖 P1 – Z bodů B01–B11 udělat stránku „Ceník a podmínky“ ve 4 jazycích + aktualizovat časté dotazy („Kolik pronájem stojí?“, „Můžu vzít psa?“, „Můžu do zahraničí?“). **10. 11. 2026: body B01–B11 poslány taťkovi e-mailem (j.tomicek@seznam.cz), čeká se na odpověď.**
 - [ ] B13 🤖 P2 – Kalkulačka ceny u kalendáře (noci × cena + doplňky, zobrazit kauci).
 - [ ] B14 🙋 P3 – Slevy: delší pronájem (7+ nocí), mimosezóna, opakovaný zákazník, studenti VŠB.
 - [ ] B15 🤝 P3 – Dárkové poukazy (ideální na Vánoce) – stránka + jednoduchý PDF poukaz.
@@ -57,8 +57,8 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 - [ ] C01 🙋 P1 – Ujasnit formu (živnost na pronájem movitých věcí?) a daně.
 - [ ] C02 🤖 P1 – Identifikace provozovatele v patičce (jméno, IČO, sídlo) – až bude C01.
-- [ ] C03 🤖 P1 – Stránka „Ochrana osobních údajů“ (GDPR) ve 4 jazycích – co formulář sbírá, proč, jak dlouho, komu (Netlify).
-- [ ] C04 🤖 P1 – Pod tlačítkem formuláře krátká věta s odkazem na C03.
+- [x] C03 🤖 P1 – Stránka „Ochrana osobních údajů“ (GDPR) ve 4 jazycích – co formulář sbírá, proč, jak dlouho, komu (Netlify). (10. 11. 2026)
+- [x] C04 🤖 P1 – Pod tlačítkem formuláře krátká věta s odkazem na C03. (10. 11. 2026)
 - [ ] C05 🤝 P1 – Vzor nájemní smlouvy (dát zkontrolovat odborníkovi).
 - [ ] C06 🤝 P1 – Předávací protokol (stav, km, palivo, poškození) + fotodokumentace při předání.
 - [ ] C07 🤖 P3 – Udržet web bez cookies; pokud přibude analytika s cookies, přidat lištu se souhlasem.
@@ -79,12 +79,12 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] D10 🙋 P2 – Seznam Webmaster – přidat web (vyhledávání Seznam.cz).
 - [ ] D11 🙋 P3 – Bing Webmaster Tools (import ze Search Console, 2 minuty).
 - [ ] D12 🤝 P3 – Články/tipy (např. „Víkend v Beskydech s obytňákem“, „Kde legálně přespat v ČR“) – přivádějí lidi z vyhledávání.
-- [ ] D13 🤖 P2 – Obrázek pro sdílení 1200 × 630 s logem (náhled na WhatsAppu/Facebooku).
+- [x] D13 🤖 P2 – Obrázek pro sdílení 1200 × 630 s logem (náhled na WhatsAppu/Facebooku). (10. 11. 2026)
 - [ ] D14 🤖 P3 – Popisné názvy souborů fotek a alt texty s klíčovými slovy.
 
 ## E · Obsah a důvěra
 
-- [ ] E01 🤖 P2 – Sekce „Proč VANDR“ (osobní přístup, kánoe a paddleboard k vozu, home office na cestách, start u Beskyd).
+- [x] E01 🤖 P2 – Sekce „Proč VANDR“ (osobní přístup, kánoe a paddleboard k vozu, home office na cestách, start u Beskyd). (10. 11. 2026)
 - [ ] E02 🙋 P2 – Sekce „O nás“: fotka + pár vět (kdo jsi, proč půjčuješ, že dodávku sám používáš).
 - [ ] E03 🤝 P2 – Recenze: po prvních zákaznících sbírat Google recenze a citovat je na webu.
 - [ ] E04 🙋 P3 – Fotky z výletů / ukázky z Instagramu.
@@ -108,7 +108,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] F04 🙋 P2 – Detaily: kuchyňka, úložné bedny, WC, ovládání topení, solár.
 - [ ] F05 🙋 P2 – Odstranit / přelepit vybledlý nápis SKANSKA na voze (pak fotit).
 - [ ] F06 🤖 P2 – Fotky ve více velikostech pro mobil a počítač (ostré a lehké).
-- [ ] F07 🤖 P3 – Ikona na plochu mobilu (apple-touch-icon, manifest).
+- [x] F07 🤖 P3 – Ikona na plochu mobilu (apple-touch-icon, manifest). (10. 11. 2026)
 - [ ] F08 🤖 P3 – Kontrola kontrastu barev (okrová na světlém pozadí).
 - [ ] F09 🤖 P3 – Projít tmavý režim na všech stránkách.
 - [ ] F10 🤖 P3 – Samolepka / polep auta s logem a webem (grafika k tisku).

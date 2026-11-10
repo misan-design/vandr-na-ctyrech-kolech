@@ -26,7 +26,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] A02 🤖 P1 – Upravit záložní texty pro případ, že se poptávka neuloží (aby dávaly smysl).
 - [ ] A03 🤖 P2 – V úvodní sekci odstranit zdvojený název značky pod logem, ponechat jen „Půjčovna obytných vozů · Ostrava“.
 - [ ] A04 🤖 P1 – Plovoucí lišta na mobilu (detail vozu): „Vybrat termín“ + „WhatsApp“.
-- [ ] A05 🤖 P1 – Galerie: přednačítat jen sousední fotku místo všech 9 (stránka vozu ~2,2 MB → cca 0,6 MB).
+- [-] A05 – ~~Galerie: přednačítat jen sousední fotku~~ – **zrušeno (10. 11. 2026):** Michael nechce, podobná úprava dříve způsobila sekání galerie. Přednačítání všech fotek zůstává.
 - [ ] A06 🤖 P2 – Písma (Barlow Condensed, Source Sans 3) nahrát přímo na web místo Google Fonts (GDPR + rychlost).
 - [ ] A07 🤖 P3 – Vlastní stránka 404.
 - [ ] A08 🤖 P2 – Větší klikací plocha odkazů v kontaktech (telefon, e-mail, WhatsApp, Instagram) – min. 44 px.
@@ -182,7 +182,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 ## Doporučené pořadí
 
-1. **Balík rychlých oprav** (🤖, jeden push): A01–A06, A08, A10, A11.
+1. **Balík rychlých oprav** (🤖, jeden push): A01–A04, A06, A08, A10, A11.
 2. **Ceník a podmínky** – Michael pošle B01–B11 nahrubo, Claude udělá B12 + C03/C04.
 3. **Právní minimum** – C01, C02, C05, C06.
 4. **Fotky** – F01–F05 (stačí jedno odpoledne s dodávkou v přírodě).

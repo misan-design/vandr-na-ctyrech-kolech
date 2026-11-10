@@ -318,7 +318,7 @@ nav.main a{min-height:44px;display:inline-flex;align-items:center}
 }
 
 /* ---- v6: contacts, i18n wrapping ---- */
-body{overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+body{overflow-wrap:break-word;hyphens:manual;-webkit-hyphens:manual}
 h1,h2,h3,h4,.btn,.badge,.chip,nav.main a{hyphens:manual;-webkit-hyphens:manual}
 h1,h2,h3,h4{overflow-wrap:break-word}
 .btn{white-space:normal;text-align:center;line-height:1.15}
@@ -391,6 +391,8 @@ footer .wm span{font-size:.6em}
 .priv .vh3{margin-top:28px}
 .priv p{margin:8px 0 0}
 footer .foot-meta a{color:inherit}
+.foot-brand-wrap>*{min-width:0}
+@media (max-width:400px){.foot-emblem{width:72px;height:72px}.foot-brand-wrap{gap:12px}footer .wm{white-space:normal;flex-wrap:wrap;row-gap:2px}}
 @media (prefers-reduced-motion:no-preference){.fade{animation:fade .35s ease both}@keyframes fade{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}}
 </style>
 

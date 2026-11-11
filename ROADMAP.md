@@ -112,20 +112,20 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] F05 🙋 P2 – Odstranit / přelepit vybledlý nápis SKANSKA na voze (pak fotit).
 - [ ] F06 🤖 P2 – Fotky ve více velikostech pro mobil a počítač (ostré a lehké).
 - [x] F07 🤖 P3 – Ikona na plochu mobilu (apple-touch-icon, manifest). (10. 11. 2026)
-- [ ] F08 🤖 P3 – Kontrola kontrastu barev (okrová na světlém pozadí).
-- [ ] F09 🤖 P3 – Projít tmavý režim na všech stránkách.
+- [x] F08 🤖 P3 – Kontrola kontrastu barev (okrová na světlém pozadí). (11. 11. 2026) – okrový text ztmaven na #8C5512 (kontrast 4,9–6,1 : 1), okrová tlačítka beze změny.
+- [x] F09 🤖 P3 – Projít tmavý režim na všech stránkách. (11. 11. 2026) – v tmavém režimu opravena světle zelená patička a rámeček „Místo převzetí“.
 - [ ] F10 🤖 P3 – Samolepka / polep auta s logem a webem (grafika k tisku).
 
 ## G · Výkon a technika
 
 - [ ] G01 🤖 P2 – Obrázky v moderním formátu s rozumnou kvalitou (bez rozmazání!) a správné velikosti podle zařízení.
 - [ ] G02 🤖 P2 – Načítat obrázky až když jsou potřeba (mimo obrazovku).
-- [ ] G03 🤖 P2 – Přednačíst úvodní fotku (rychlejší první zobrazení).
+- [x] G03 🤖 P2 – Přednačíst úvodní fotku (rychlejší první zobrazení). (11. 11. 2026) – preload úvodní fotky + vysoká priorita hlavní fotky v galerii.
 - [ ] G04 🤖 P3 – Zmenšit HTML/CSS/JS (build krok).
 - [ ] G05 🤖 P2 – Data vozů vyčlenit do samostatného souboru (snadné přidání dalšího auta).
 - [ ] G06 🤖 P2 – Audit Lighthouse (výkon, SEO, přístupnost) – cíl 95+ všude.
 - [ ] G07 🙋 P2 – Jednou měsíčně zkontrolovat kredity Netlify (Usage); plán B = GitHub Pages.
-- [ ] G08 🤖 P3 – Bezpečnostní hlavičky v `netlify.toml`.
+- [x] G08 🤖 P3 – Bezpečnostní hlavičky v `netlify.toml`. (11. 11. 2026) – CSP + nosniff, referrer, frame, permissions, HSTS v netlify.toml. Pozor: nová externí služba (analytika, mapa, písma odjinud) se musí přidat do Content-Security-Policy, jinak ji prohlížeč zablokuje.
 - [ ] G09 🙋 P3 – Ověřit přesměrování www → bez www a http → https.
 - [ ] G10 🙋 P3 – Hlídání dostupnosti zdarma (UptimeRobot) – e-mail, kdyby web spadl.
 
@@ -133,7 +133,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 - [ ] H01 🤖 P3 – Ovládání klávesnicí (kalendář, galerie, formulář).
 - [ ] H02 🤖 P3 – Hlášky formuláře pro čtečky obrazovky.
-- [ ] H03 🤖 P3 – Písmo ve formuláři min. 16 px (iPhone jinak přibližuje).
+- [x] H03 🤖 P3 – Písmo ve formuláři min. 16 px (iPhone jinak přibližuje). (11. 11. 2026) – vstupní pole min. 16 px (zaškrtávátka nevadí).
 
 ## I · Rezervace a provoz
 
@@ -187,6 +187,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - Vypnuto dělení slov na mobilu, oprava přetékající patičky na úzkých telefonech 320 px (10. 11. 2026)
 - Body B01–B11 (ceník a podmínky) poslány taťkovi e-mailem – čeká se na odpověď (10. 11. 2026)
 - Rozhodnutí: plovoucí lišta jen na detailu vozu, ne na úvodu (10. 11. 2026)
+- Bezpečnostní hlavičky, kontrast okrového textu, tmavý režim, rychlejší úvodní fotka (11. 11. 2026)
 - Přestavba pro Google: skutečné adresy stránek a jazyků, předgenerované HTML, titulky/popisy, hreflang, strukturovaná data, sitemap s 12 adresami (11. 11. 2026)
 
 ## Doporučené pořadí

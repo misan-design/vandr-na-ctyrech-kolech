@@ -950,7 +950,7 @@ function seo(rt){
   else if(pre) pre.remove();
   const ld=document.getElementById("ld");
   if(rt.page==="home"){
-    const data={"@context":"https://schema.org","@type":"AutoRental","name":BRAND,"url":SITE+BASE[lang],"description":t("meta_desc"),
+    const data={"@context":"https://schema.org","@type":"AutoRental","name":BRAND,"alternateName":["VANDR na čtyřech","vandrnactyrech","vandrnactyrech.cz","VANDR"],"url":SITE+BASE[lang],"description":t("meta_desc"),
       "image":SITE+"/img/og.jpg","logo":SITE+"/img/icon-512.png","telephone":CONTACT.tel,"email":CONTACT.email,
       "address":{"@type":"PostalAddress","addressLocality":"Ostrava","addressRegion":"Moravskoslezský kraj","addressCountry":"CZ"},
       "areaServed":"Ostrava","sameAs":[CONTACT.instagramUrl]};

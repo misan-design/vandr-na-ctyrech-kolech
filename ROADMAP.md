@@ -76,7 +76,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [x] D04 🤖 P2 – Strukturovaná data (JSON-LD): místní firma / půjčovna, nabídka s cenou, časté dotazy. (11. 11. 2026) – zatím jen místní firma (AutoRental); nabídku s cenou doplnit po ceníku.
 - [x] D05 🤖 P2 – Sitemap se všemi stránkami a jazyky (navazuje na D01, D02). (11. 11. 2026)
 - [x] D06 🤖 P1 – Obsah stránek přímo v HTML (předgenerovat), ne až po spuštění JavaScriptu. (11. 11. 2026)
-- [~] D07 🤖 P2 – Texty doplnit o hledané fráze: „půjčovna obytňáku Ostrava“, „pronájem obytné dodávky“, „campervan Ostrava“, „Wohnmobil mieten Ostrava“. – titulky a popisy stránek už fráze obsahují (11. 11. 2026); zbývá jemně doplnit texty na stránkách.
+- [~] D07 🤖 P2 – Texty doplnit o hledané fráze: „půjčovna obytňáku Ostrava“, „pronájem obytné dodávky“, „campervan Ostrava“, „Wohnmobil mieten Ostrava“. – titulky a popisy stránek už fráze obsahují (11. 11. 2026); zbývá jemně doplnit texty na stránkách. **11. 11. 2026:** H1 na úvodu = „Půjčovna obytných vozů · Ostrava“ (4 jazyky, vzhled beze změny, slogan zůstal), alternativní názvy firmy ve strukturovaných datech (VANDR na čtyřech, vandrnactyrech). Michael nechce měnit viditelné texty kvůli SEO.
 - [ ] D08 🙋 P1 – Google firemní profil: po ověření doplnit fotky a odkaz na web, přidávat příspěvky.
 - [ ] D09 🙋 P2 – Zápis na **Firmy.cz** (Seznam – v Česku důležité) a kontrola na Mapy.cz.
 - [ ] D10 🙋 P2 – Seznam Webmaster – přidat web (vyhledávání Seznam.cz).

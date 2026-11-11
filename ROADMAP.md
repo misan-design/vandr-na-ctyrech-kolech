@@ -16,7 +16,9 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - **Každý push na `main` = 1 nasazení = 15 kreditů Netlify** (zdarma 300 kreditů/měsíc, 1 GB přenosu = 20 kreditů). Změny sdružovat do jednoho pushe.
 - Jazyky CZ/EN/SK/DE musí být **striktně oddělené** (žádné míchání). Výjimky: název značky, vlastní jména, stránka `#admin`.
 - Poptávky: Netlify Forms (formulář `poptavka`) → e-mail na Seznam, odtud kopie do Gmailu.
-- Obsazenost: soubor `obsazenost.json`, mění se přes `…/#admin` → „Zkopírovat pro GitHub“.
+- Obsazenost: soubor `site/obsazenost.json`, mění se přes `vandrnactyrech.cz/#admin` → „Zkopírovat pro GitHub“.
+- **Struktura (od 11. 11. 2026):** zdroj `src/app.html` → `node tools/build.mjs` → vygenerované stránky v `site/` (Netlify publikuje jen `site/`). Po každé úpravě zdroje spustit build a commitnout i `site/`.
+- Jazyk určuje adresa (`/`, `/en/`, `/sk/`, `/de/`). Kdo si jazyk zvolil tlačítkem, dostane ho znovu při zadání holé domény. Automatické přepnutí podle jazyka prohlížeče bylo zrušeno (Google ho nedoporučuje).
 - Fotky na web vždy s rozmazanou SPZ. Nikdy nepublikovat techničák ani VIN.
 
 ---
@@ -68,13 +70,13 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 ## D · Google a nalezitelnost (SEO)
 
 - [x] D00 Google Search Console – ověřeno, sitemap odeslána (9. 11. 2026)
-- [ ] D01 🤖 P1 – Skutečné podstránky místo `#` adres (`/`, `/ford-transit/`, `/cenik-a-podminky/`, `/kontakt/`) – Google teď vidí jen úvodní stránku.
-- [ ] D02 🤖 P1 – Jazykové verze na vlastních adresách `/en/`, `/de/`, `/sk/` + značky hreflang.
-- [ ] D03 🤖 P1 – Vlastní titulek a popis pro každou stránku a jazyk.
-- [ ] D04 🤖 P2 – Strukturovaná data (JSON-LD): místní firma / půjčovna, nabídka s cenou, časté dotazy.
-- [ ] D05 🤖 P2 – Sitemap se všemi stránkami a jazyky (navazuje na D01, D02).
-- [ ] D06 🤖 P1 – Obsah stránek přímo v HTML (předgenerovat), ne až po spuštění JavaScriptu.
-- [ ] D07 🤖 P2 – Texty doplnit o hledané fráze: „půjčovna obytňáku Ostrava“, „pronájem obytné dodávky“, „campervan Ostrava“, „Wohnmobil mieten Ostrava“.
+- [x] D01 🤖 P1 – Skutečné podstránky místo `#` adres (`/`, `/ford-transit/`, `/cenik-a-podminky/`, `/kontakt/`) – Google teď vidí jen úvodní stránku. (11. 11. 2026)
+- [x] D02 🤖 P1 – Jazykové verze na vlastních adresách `/en/`, `/de/`, `/sk/` + značky hreflang. (11. 11. 2026)
+- [x] D03 🤖 P1 – Vlastní titulek a popis pro každou stránku a jazyk. (11. 11. 2026)
+- [x] D04 🤖 P2 – Strukturovaná data (JSON-LD): místní firma / půjčovna, nabídka s cenou, časté dotazy. (11. 11. 2026) – zatím jen místní firma (AutoRental); nabídku s cenou doplnit po ceníku.
+- [x] D05 🤖 P2 – Sitemap se všemi stránkami a jazyky (navazuje na D01, D02). (11. 11. 2026)
+- [x] D06 🤖 P1 – Obsah stránek přímo v HTML (předgenerovat), ne až po spuštění JavaScriptu. (11. 11. 2026)
+- [~] D07 🤖 P2 – Texty doplnit o hledané fráze: „půjčovna obytňáku Ostrava“, „pronájem obytné dodávky“, „campervan Ostrava“, „Wohnmobil mieten Ostrava“. – titulky a popisy stránek už fráze obsahují (11. 11. 2026); zbývá jemně doplnit texty na stránkách.
 - [ ] D08 🙋 P1 – Google firemní profil: po ověření doplnit fotky a odkaz na web, přidávat příspěvky.
 - [ ] D09 🙋 P2 – Zápis na **Firmy.cz** (Seznam – v Česku důležité) a kontrola na Mapy.cz.
 - [ ] D10 🙋 P2 – Seznam Webmaster – přidat web (vyhledávání Seznam.cz).
@@ -185,6 +187,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - Vypnuto dělení slov na mobilu, oprava přetékající patičky na úzkých telefonech 320 px (10. 11. 2026)
 - Body B01–B11 (ceník a podmínky) poslány taťkovi e-mailem – čeká se na odpověď (10. 11. 2026)
 - Rozhodnutí: plovoucí lišta jen na detailu vozu, ne na úvodu (10. 11. 2026)
+- Přestavba pro Google: skutečné adresy stránek a jazyků, předgenerované HTML, titulky/popisy, hreflang, strukturovaná data, sitemap s 12 adresami (11. 11. 2026)
 
 ## Doporučené pořadí
 
@@ -192,5 +195,5 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 2. **Ceník a podmínky** – čeká se na odpověď taťky (B01–B11), pak Claude udělá B12. C03/C04 hotovo.
 3. **Právní minimum** – C01, C02, C05, C06.
 4. **Fotky** – F01–F05 (stačí jedno odpoledne s dodávkou v přírodě).
-5. **Velká SEO přestavba** – D01–D06 (jeden větší krok).
+5. ~~Velká SEO přestavba~~ – D01–D06 hotovo 11. 11. 2026. Po nasazení: v Search Console znovu odeslat sitemap a požádat o indexování `/ford-transit/`.
 6. Postupně zbytek podle priority.

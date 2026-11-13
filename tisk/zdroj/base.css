@@ -1,0 +1,9 @@
+:root{--forest:#24452F;--deep:#16301F;--cream:#F3EEDF;--ochre:#D8913A;--ochre-ink:#8C5512;--red:#C8102E;--ink:#1B2620;--sage:#8DBE8F}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:"Inter",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;overflow:hidden;break-after:page}
+.page:last-child{break-after:auto}
+.d{font-family:"Inter Display","Inter",sans-serif}
+img,svg{display:block}
+.qr{background:#fff;padding:2.2mm;border-radius:2mm}
+.qr img{width:100%;height:auto}

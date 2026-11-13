@@ -1,0 +1,66 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+@page{size:154mm 216mm;margin:0}
+.page{width:154mm;height:216mm}
+/* bezpečná zóna = 3 mm spadávka + 6 mm okraj */
+.f1 .photo{position:absolute;inset:0 0 auto 0;height:136mm;background:url(ford-transit-obytna-dodavka-zepredu.jpg) center 60%/cover}
+.f1 .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,48,31,.0) 45%,rgba(22,48,31,.85) 100%)}
+.f1 .emb{position:absolute;top:10mm;left:10mm;width:30mm}
+.f1 .head{position:absolute;left:10mm;right:10mm;top:101mm;color:var(--cream)}
+.f1 .eyebrow{font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ochre)}
+.f1 h1{font-size:27pt;line-height:1.02;font-weight:800;margin-top:2mm}
+.f1 .low{position:absolute;inset:136mm 0 0 0;background:var(--cream);padding:7mm 10mm 0}
+.f1 .lead{font-size:11pt;line-height:1.45;max-width:118mm}
+.f1 .chips{display:flex;flex-wrap:wrap;gap:2mm;margin-top:5mm}
+.f1 .chips span{font-size:8.5pt;font-weight:600;padding:1.4mm 3mm;border-radius:10mm;background:#fff;border:.3mm solid #d9d2bd}
+.f1 .bar{position:absolute;left:0;right:0;bottom:0;height:31mm;background:var(--forest);color:var(--cream);display:flex;align-items:center;gap:6mm;padding:0 10mm 3mm}
+.f1 .bar .qr{width:24mm;flex:none}
+.f1 .bar b{font-size:15pt;font-weight:800;display:block}
+.f1 .bar small{font-size:8.5pt;opacity:.85;display:block;margin-top:.8mm}
+.b1{background:var(--cream)}
+.b1 .top{display:flex;align-items:center;justify-content:space-between;padding:12mm 10mm 0}
+.b1 .top img{height:16mm}
+.b1 h2{font-size:15pt;font-weight:800;color:var(--forest);margin:7mm 10mm 3mm}
+.b1 ol{list-style:none;margin:0 10mm;counter-reset:s}
+.b1 li{counter-increment:s;position:relative;padding:0 0 3.2mm 10mm;font-size:9.5pt;line-height:1.4}
+.b1 li:before{content:counter(s);position:absolute;left:0;top:-.3mm;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--ochre);color:#fff;font-weight:700;font-size:8.5pt;display:grid;place-items:center}
+.b1 li b{display:block;font-size:10pt}
+.b1 .grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm 6mm;margin:2mm 10mm 0}
+.b1 .grid div{font-size:8.8pt;line-height:1.38}
+.b1 .grid b{display:block;color:var(--forest);font-size:9.5pt;margin-bottom:.6mm}
+.b1 .pics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2mm;margin:6mm 10mm 0;height:30mm}
+.b1 .pics div{background-size:cover;background-position:center;border-radius:2mm}
+.b1 .foot{position:absolute;left:0;right:0;bottom:0;height:34mm;background:var(--deep);color:var(--cream);display:flex;align-items:center;gap:6mm;padding:0 10mm 3mm}
+.b1 .foot .qr{width:25mm;flex:none}
+.b1 .foot p{font-size:9pt;line-height:1.55}
+.b1 .foot strong{font-size:12pt;display:block;color:var(--ochre)}
+</style></head><body>
+<section class="page f1">
+  <div class="photo"></div>
+  <img class="emb" src="vandr-emblem.svg" alt="">
+  <div class="head"><div class="eyebrow">Půjčovna obytných vozů · Ostrava-Poruba</div><h1 class="d">Váš výlet začíná<br>v Ostravě.</h1></div>
+  <div class="low">
+    <p class="lead">Vyberte si obytný vůz a naplánujte cestu po svém. Vyzvednete si ho v&nbsp;Ostravě-Porubě u&nbsp;VŠB, kde vám ukážeme, jak vše funguje.</p>
+    <div class="chips"><span>Ford Transit · 4 lůžka</span><span>Řidičák sk. B</span><span>Kánoe i paddleboard</span><span>Beskydy za rohem</span></div>
+  </div>
+  <div class="bar"><div class="qr"><img src="qr-web.svg" alt=""></div><div><b class="d">vandrnactyrech.cz</b><small>Volné termíny a poptávka online</small><small>605 267 664 · @vandrnactyrech</small></div></div>
+</section>
+<section class="page b1">
+  <div class="top"><img src="vandr-logo-svetle.svg" alt=""></div>
+  <h2 class="d">Jak pronájem funguje</h2>
+  <ol>
+    <li><b>Vyberte termín</b>Volné dny uvidíte v kalendáři na webu.</li>
+    <li><b>Pošlete poptávku</b>Ozveme se, potvrdíme termín a domluvíme podrobnosti.</li>
+    <li><b>Převzetí v Ostravě-Porubě</b>V klidu vám vše ukážeme a poradíme, kam vyrazit.</li>
+    <li><b>Vyrazte na vandr</b>Hory, voda, Slovensko – cestu máte po svém.</li>
+  </ol>
+  <h2 class="d">Proč VANDR</h2>
+  <div class="grid">
+    <div><b>Osobní přístup</b>Nejsme velká půjčovna. Vše vysvětlíme a poradíme.</div>
+    <div><b>Obytňák i výlet na vodu</b>K vozu kánoe, paddleboard nebo stan.</div>
+    <div><b>Kancelář s výhledem</b>Vezměte práci s sebou do hor nebo k jezeru.</div>
+    <div><b>Hory kousek za Ostravou</b>Beskydy hned za městem, Jeseníky i Slovensko blízko.</div>
+  </div>
+  <div class="pics"><div style="background-image:url(obytna-dodavka-interier-postele.jpg)"></div><div style="background-image:url(obytna-dodavka-kuchynka.jpg)"></div><div style="background-image:url(ford-transit-obytna-dodavka-v-noci.jpg)"></div></div>
+  <div class="foot"><div class="qr"><img src="qr-web.svg" alt=""></div><p><strong class="d">Naskenujte a vyberte termín</strong>vandrnactyrech.cz<br>605 267 664 · tomicekmichael@gmail.com<br>Instagram @vandrnactyrech</p></div>
+</section>
+</body></html>

@@ -83,7 +83,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] D11 🙋 P3 – Bing Webmaster Tools (import ze Search Console, 2 minuty).
 - [ ] D12 🤝 P3 – Články/tipy (např. „Víkend v Beskydech s obytňákem“, „Kde legálně přespat v ČR“) – přivádějí lidi z vyhledávání.
 - [x] D13 🤖 P2 – Obrázek pro sdílení 1200 × 630 s logem (náhled na WhatsAppu/Facebooku). (10. 11. 2026)
-- [ ] D14 🤖 P3 – Popisné názvy souborů fotek a alt texty s klíčovými slovy.
+- [x] D14 🤖 P3 – Popisné názvy souborů fotek a alt texty s klíčovými slovy. ✅ 2026-11-13
 
 ## E · Obsah a důvěra
 
@@ -131,8 +131,8 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 
 ## H · Přístupnost
 
-- [ ] H01 🤖 P3 – Ovládání klávesnicí (kalendář, galerie, formulář).
-- [ ] H02 🤖 P3 – Hlášky formuláře pro čtečky obrazovky.
+- [x] H01 🤖 P3 – Ovládání klávesnicí (kalendář, galerie, formulář). ✅ 2026-11-13
+- [x] H02 🤖 P3 – Hlášky formuláře pro čtečky obrazovky. ✅ 2026-11-13
 - [x] H03 🤖 P3 – Písmo ve formuláři min. 16 px (iPhone jinak přibližuje). (11. 11. 2026) – vstupní pole min. 16 px (zaškrtávátka nevadí).
 
 ## I · Rezervace a provoz

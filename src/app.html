@@ -174,6 +174,9 @@ section.band.alt{background:var(--surface)}
 .gallery{display:grid;gap:14px}
 .gallery .main-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);display:block;background:var(--surface-2);cursor:zoom-in}
 .main-wrap{position:relative}
+.main-img:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+[aria-invalid="true"]{border-color:var(--trail-red)!important;box-shadow:0 0 0 2px rgba(200,16,46,.25)}
+.handoff:focus{outline:none}
 .gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:999px;border:0;display:grid;place-items:center;cursor:pointer;background:rgba(15,25,19,.55);color:#fff;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background .15s}
 .gal-nav:hover{background:rgba(15,25,19,.8)}
 .gal-nav svg{width:24px;height:24px}
@@ -413,7 +416,7 @@ footer .foot-meta a{color:inherit}
 <div class="note-lang" id="langNote" hidden><div class="wrap" id="langNoteText"></div></div>
 <main id="app"></main>
 <footer><div class="wrap" id="foot"></div></footer>
-<div class="lb" id="lb" hidden><img id="lbImg" alt=""><button id="lbClose">Zavřít</button><button type="button" class="gal-nav lb-nav gal-prev" id="lbPrev" data-dir="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav lb-nav gal-next" id="lbNext" data-dir="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count lb-count" id="lbCount"></span></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" hidden><img id="lbImg" alt=""><button id="lbClose">Zavřít</button><button type="button" class="gal-nav lb-nav gal-prev" id="lbPrev" data-dir="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav lb-nav gal-next" id="lbNext" data-dir="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count lb-count" id="lbCount"></span></div>
 
 <script>
 /* ====== EDIT HERE: name & contacts ====== */
@@ -439,7 +442,7 @@ const VEHICLES = [{
   slug: "ford-transit",
   name: "Ford Transit",
   sub: {cs:"Obytná dodávka · 2016", en:"Campervan · 2016", sk:"Obytná dodávka · 2016", de:"Campervan · 2016"},
-  cover: "/img/hero.jpg",
+  cover: "/img/ford-transit-obytna-dodavka-zepredu.jpg",
   cardText: {
     cs:"Obytná dodávka s kuchyňkou, nezávislým topením a solárním panelem.",
     en:"A campervan with a kitchenette, diesel heater and solar panel.",
@@ -459,15 +462,15 @@ const VEHICLES = [{
     [{cs:"Řidičák",en:"Licence",sk:"Vodičák",de:"Führerschein"},{cs:"skupina B",en:"category B",sk:"skupina B",de:"Klasse B"}],
   ],
   photos: [
-    {src:"/img/hero.jpg", alt:{cs:"Bílý Ford Transit s vysokou střechou, pohled zepředu",en:"White high-roof Ford Transit, front view",sk:"Biely Ford Transit s vysokou strechou, pohľad spredu",de:"Weißer Ford Transit mit Hochdach, Frontansicht"}},
-    {src:"/img/bok.jpg", alt:{cs:"Ford Transit z boku, dlouhá verze s okny",en:"Ford Transit from the side, long version with windows",sk:"Ford Transit z boku, dlhá verzia s oknami",de:"Ford Transit von der Seite, lange Version mit Fenstern"}},
-    {src:"/img/zad.jpg", alt:{cs:"Zadní dveře s žebříkem na střechu a tažným zařízením",en:"Rear doors with roof ladder and tow bar",sk:"Zadné dvere s rebríkom na strechu a ťažným zariadením",de:"Hecktüren mit Dachleiter und Anhängerkupplung"}},
-    {src:"/img/noc.jpg", alt:{cs:"Ford Transit v noci s rozsvícenými světly",en:"Ford Transit at night with headlights on",sk:"Ford Transit v noci so zapnutými svetlami",de:"Ford Transit bei Nacht mit eingeschaltetem Licht"}},
-    {src:"/img/interier-postele.jpg", alt:{cs:"Interiér od sedadel: kuchyňka vlevo a lůžka napříč v zadní části",en:"Interior seen from the seats: kitchenette on the left, transverse berths at the back",sk:"Interiér od sedadiel: kuchynka vľavo a lôžka naprieč v zadnej časti",de:"Innenraum von den Sitzen aus: Küchenzeile links, Querbetten hinten"}},
-    {src:"/img/interier-led.jpg", alt:{cs:"Pohled ze zadní části dopředu, střešní okno s LED osvětlením",en:"View forward from the back, roof window with LED lighting",sk:"Pohľad zo zadnej časti dopredu, strešné okno s LED osvetlením",de:"Blick von hinten nach vorne, Dachfenster mit LED-Beleuchtung"}},
-    {src:"/img/interier-zaves.jpg", alt:{cs:"Interiér se zataženými závěsy a LED světly",en:"Interior with curtains drawn and LED lights on",sk:"Interiér so zatiahnutými závesmi a LED svetlami",de:"Innenraum mit zugezogenen Vorhängen und LED-Licht"}},
-    {src:"/img/kuchyn.jpg", alt:{cs:"Kuchyňská linka shora: plynový vařič, dřez, koření a hrnky",en:"Kitchenette from above: gas stove, sink, spices and mugs",sk:"Kuchynská linka zhora: plynový varič, drez, korenie a hrnčeky",de:"Küchenzeile von oben: Gaskocher, Spüle, Gewürze und Tassen"}},
-    {src:"/img/skrinky.jpg", alt:{cs:"Horní skříňky s nádobím a polička na koření",en:"Overhead lockers with dishes and a spice shelf",sk:"Horné skrinky s riadom a polička na korenie",de:"Hängeschränke mit Geschirr und Gewürzregal"}},
+    {src:"/img/ford-transit-obytna-dodavka-zepredu.jpg", alt:{cs:"Bílý Ford Transit s vysokou střechou, pohled zepředu",en:"White high-roof Ford Transit, front view",sk:"Biely Ford Transit s vysokou strechou, pohľad spredu",de:"Weißer Ford Transit mit Hochdach, Frontansicht"}},
+    {src:"/img/ford-transit-obytna-dodavka-z-boku.jpg", alt:{cs:"Ford Transit z boku, dlouhá verze s okny",en:"Ford Transit from the side, long version with windows",sk:"Ford Transit z boku, dlhá verzia s oknami",de:"Ford Transit von der Seite, lange Version mit Fenstern"}},
+    {src:"/img/ford-transit-zadni-dvere-zebrik.jpg", alt:{cs:"Zadní dveře s žebříkem na střechu a tažným zařízením",en:"Rear doors with roof ladder and tow bar",sk:"Zadné dvere s rebríkom na strechu a ťažným zariadením",de:"Hecktüren mit Dachleiter und Anhängerkupplung"}},
+    {src:"/img/ford-transit-obytna-dodavka-v-noci.jpg", alt:{cs:"Ford Transit v noci s rozsvícenými světly",en:"Ford Transit at night with headlights on",sk:"Ford Transit v noci so zapnutými svetlami",de:"Ford Transit bei Nacht mit eingeschaltetem Licht"}},
+    {src:"/img/obytna-dodavka-interier-postele.jpg", alt:{cs:"Interiér od sedadel: kuchyňka vlevo a lůžka napříč v zadní části",en:"Interior seen from the seats: kitchenette on the left, transverse berths at the back",sk:"Interiér od sedadiel: kuchynka vľavo a lôžka naprieč v zadnej časti",de:"Innenraum von den Sitzen aus: Küchenzeile links, Querbetten hinten"}},
+    {src:"/img/obytna-dodavka-interier-stresni-okno.jpg", alt:{cs:"Pohled ze zadní části dopředu, střešní okno s LED osvětlením",en:"View forward from the back, roof window with LED lighting",sk:"Pohľad zo zadnej časti dopredu, strešné okno s LED osvetlením",de:"Blick von hinten nach vorne, Dachfenster mit LED-Beleuchtung"}},
+    {src:"/img/obytna-dodavka-interier-zavesy.jpg", alt:{cs:"Interiér se zataženými závěsy a LED světly",en:"Interior with curtains drawn and LED lights on",sk:"Interiér so zatiahnutými závesmi a LED svetlami",de:"Innenraum mit zugezogenen Vorhängen und LED-Licht"}},
+    {src:"/img/obytna-dodavka-kuchynka.jpg", alt:{cs:"Kuchyňská linka shora: plynový vařič, dřez, koření a hrnky",en:"Kitchenette from above: gas stove, sink, spices and mugs",sk:"Kuchynská linka zhora: plynový varič, drez, korenie a hrnčeky",de:"Küchenzeile von oben: Gaskocher, Spüle, Gewürze und Tassen"}},
+    {src:"/img/obytna-dodavka-skrinky-nadobi.jpg", alt:{cs:"Horní skříňky s nádobím a polička na koření",en:"Overhead lockers with dishes and a spice shelf",sk:"Horné skrinky s riadom a polička na korenie",de:"Hängeschränke mit Geschirr und Gewürzregal"}},
   ],
   sleeping: [
     [{cs:"Dvě pevná lůžka",en:"Two fixed berths",sk:"Dve pevné lôžka",de:"Zwei feste Betten"},
@@ -949,7 +952,7 @@ function seo(rt){
   LANGS.forEach(l=>headTag("link","hreflang",l,{rel:"alternate",href:url(l)}));
   headTag("link","hreflang","x-default",{rel:"alternate",href:url("cs")});
   const pre=document.getElementById("pre-hero");
-  if(rt.page==="home"){ const el=pre||Object.assign(document.createElement("link"),{id:"pre-hero",rel:"preload"}); el.setAttribute("as","image"); el.setAttribute("href","/img/hero.jpg"); el.setAttribute("fetchpriority","high"); if(!pre) document.head.appendChild(el); }
+  if(rt.page==="home"){ const el=pre||Object.assign(document.createElement("link"),{id:"pre-hero",rel:"preload"}); el.setAttribute("as","image"); el.setAttribute("href","/img/ford-transit-obytna-dodavka-zepredu.jpg"); el.setAttribute("fetchpriority","high"); if(!pre) document.head.appendChild(el); }
   else if(pre) pre.remove();
   const ld=document.getElementById("ld");
   if(rt.page==="home"){
@@ -1012,11 +1015,11 @@ function contactSection(){
     '<label class="f">'+esc(t("f_vehicle"))+'<select id="f-vehicle">'+VEHICLES.map(x=>'<option value="'+x.id+'"'+(x.id===vid?' selected':'')+'>'+esc(x.name)+'</option>').join("")+'</select></label></div>'+
     '<fieldset class="xf"><legend>'+esc(t("f_extras"))+'</legend><div id="xChecks" class="xchecks">'+extrasChecks(vid)+'</div></fieldset>'+
     '<label class="f">'+esc(t("f_msg"))+'<textarea id="f-msg"></textarea></label>'+
-    '<p class="err-msg" id="f-err" hidden></p>'+
+    '<p class="err-msg" id="f-err" role="alert" hidden></p>'+
     '<p class="hp" aria-hidden="true"><label>bot<input id="f-bot" name="bot-field" tabindex="-1" autocomplete="off"></label></p>'+
     '<div><button class="btn btn-primary" type="submit">'+esc(t("f_submit"))+'</button></div>'+
     '<p class="fine consent">'+esc(t("f_consent"))+' <a href="'+U("privacy")+'">'+esc(t("f_consent_link"))+'</a>.</p></form>'+
-    '<div class="handoff" id="handoff" hidden></div></div>'+
+    '<div class="handoff" id="handoff" role="status" aria-live="polite" tabindex="-1" hidden></div></div>'+
   '<aside class="ccards">'+
     '<div class="ccard"><span class="k">'+esc(t("c_phone"))+'</span><a class="v" href="tel:'+CONTACT.tel+'">'+esc(CONTACT.phone)+'</a>'+
       '<a class="ccard-sub" href="https://wa.me/'+CONTACT.whatsapp+'" target="_blank" rel="noopener">'+icon("wa")+'WhatsApp ↗</a></div>'+
@@ -1047,7 +1050,7 @@ function vehicleDetail(v){
   const p=v.photos;
   return '<section class="band vtop"><div class="wrap">'+
     '<p class="crumb"><a href="'+U("home",{section:"vozy"})+'">← '+esc(t("back"))+'</a></p>'+
-    '<div class="vgrid"><div class="gallery" data-v="'+v.id+'"><div class="main-wrap"><img class="main-img" fetchpriority="high" src="'+p[0].src+'" alt="'+esc(L(p[0].alt))+'">'+(p.length>1?'<button type="button" class="gal-nav gal-prev" data-dir="-1" aria-label="'+esc(t("gal_prev"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav gal-next" data-dir="1" aria-label="'+esc(t("gal_next"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count">1 / '+p.length+'</span>':'')+'</div>'+
+    '<div class="vgrid"><div class="gallery" data-v="'+v.id+'"><div class="main-wrap"><img class="main-img" tabindex="0" role="button" fetchpriority="high" src="'+p[0].src+'" alt="'+esc(L(p[0].alt))+'">'+(p.length>1?'<button type="button" class="gal-nav gal-prev" data-dir="-1" aria-label="'+esc(t("gal_prev"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="gal-nav gal-next" data-dir="1" aria-label="'+esc(t("gal_next"))+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="gal-count">1 / '+p.length+'</span>':'')+'</div>'+
       '<div class="thumbs">'+p.map((x,i)=>'<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'" aria-label="'+esc(L(x.alt))+'"><img src="'+x.src.replace('img/','img/thumb/')+'" alt="" loading="lazy"></button>').join("")+'</div></div>'+
       '<div class="vsum"><div class="eyebrow">'+mark("green")+esc(L(v.sub))+'</div><h1 class="vh1">'+esc(v.name)+'</h1>'+
         '<p>'+esc(L(v.summary))+'</p>'+
@@ -1219,11 +1222,11 @@ document.addEventListener("click", async e=>{
   const th=e.target.closest(".thumbs button"); if(th){ galShow(th.closest(".gallery"), +th.dataset.i); return; }
   const gn=e.target.closest(".gal-nav"); if(gn){ e.preventDefault(); const g=gn.classList.contains("lb-nav") ? lbGallery : gn.closest(".gallery"); if(g) galStep(g, +gn.dataset.dir); return; }
   const mi=e.target.closest(".main-img"); if(mi){ lbGallery=mi.closest(".gallery"); syncLb(); $("#lbImg").src=mi.src; $("#lbImg").alt=mi.alt; $("#lb").hidden=false; $("#lbClose").focus(); return; }
-  if(e.target.closest("#lbClose")||e.target.id==="lb"){ $("#lb").hidden=true; return; }
+  if(e.target.closest("#lbClose")||e.target.id==="lb"){ closeLb(); return; }
   const box=e.target.closest(".cal-box");
   if(box){
     const vid=box.dataset.cal, admin=box.dataset.admin==="1";
-    const nav=e.target.closest("[data-nav]"); if(nav){ const m=calMonth[vid]; calMonth[vid]=new Date(m.getFullYear(),m.getMonth()+(+nav.dataset.nav),1); box.outerHTML=calHtml(vid,admin); return; }
+    const nav=e.target.closest("[data-nav]"); if(nav){ const m=calMonth[vid]; calMonth[vid]=new Date(m.getFullYear(),m.getMonth()+(+nav.dataset.nav),1); box.outerHTML=calHtml(vid,admin); const nb=$('[data-cal="'+vid+'"] [data-nav="'+nav.dataset.nav+'"]'); if(nb&&!nb.disabled) nb.focus(); return; }
     const day=e.target.closest(".day"); if(day && !day.disabled){
       const k=day.dataset.d;
       if(admin){ const s=bookedSet(vid); s.has(k)?s.delete(k):s.add(k); AVAIL[vid]=toRanges(s); dirtyAdmin=true; render({keepScroll:true}); return; }
@@ -1233,6 +1236,7 @@ document.addEventListener("click", async e=>{
       else if(rangeHasBooked(vid,s.a,k)){ box.outerHTML=calHtml(vid,false); const st=$('[data-cal="'+vid+'"] .cal-status'); st.textContent=t("cal_conflict"); st.classList.add("err"); return; }
       else s.b=k;
       box.outerHTML=calHtml(vid,false); updateMbar(vid);
+      const fd=$('[data-cal="'+vid+'"] [data-d="'+k+'"]'); if(fd) fd.focus();
       if(s.a&&s.b){ const f=$("#f-from"), tt=$("#f-to"); if(f&&tt){ f.value=s.a; tt.value=s.b; } prefill={a:s.a,b:s.b,vehicle:vid}; }
       return;
     }
@@ -1243,7 +1247,21 @@ document.addEventListener("click", async e=>{
     try{ await navigator.clipboard.writeText(txt); cp.textContent=t("ho_copied"); }catch(_){ const r=document.createRange(); r.selectNodeContents($("#hoText")); const sl=getSelection(); sl.removeAllRanges(); sl.addRange(r); } }
 });
 document.addEventListener("change", e=>{ if(e.target.id==="f-vehicle"){ const c=$("#xChecks"); if(c) c.innerHTML=extrasChecks(e.target.value); } });
-document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !$("#lb").hidden) $("#lb").hidden=true; });
+function closeLb(){ $("#lb").hidden=true; const m=lbGallery&&$(".main-img",lbGallery); if(m) m.focus(); }
+document.addEventListener("keydown", e=>{
+  const lbOpen=!$("#lb").hidden;
+  if(e.key==="Escape" && lbOpen){ closeLb(); return; }
+  if(e.key==="Tab" && lbOpen){ const f=[...$("#lb").querySelectorAll("button")].filter(b=>!b.hidden); const i=f.indexOf(document.activeElement);
+    if(e.shiftKey && i<=0){ e.preventDefault(); f[f.length-1].focus(); } else if(!e.shiftKey && i===f.length-1){ e.preventDefault(); f[0].focus(); } return; }
+  const t_=e.target;
+  if((e.key==="Enter"||e.key===" ") && t_.classList && t_.classList.contains("main-img")){ e.preventDefault(); t_.click(); return; }
+  // calendar: arrow keys move between days
+  if(t_.classList && t_.classList.contains("day") && /^Arrow/.test(e.key)){
+    const step={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key]; const d=fromIso(t_.dataset.d); d.setDate(d.getDate()+step);
+    const box=t_.closest(".cal-box"); const n=box.querySelector('.day[data-d="'+iso(d)+'"]');
+    if(n){ e.preventDefault(); e.stopPropagation(); n.focus(); }
+  }
+}, true);
 
 /* Inquiry message: written entirely in the visitor's selected language */
 function buildMessage(d){
@@ -1266,12 +1284,14 @@ document.addEventListener("submit", async e=>{
   const g=id=>$("#"+id).value.trim();
   const name=g("f-name"), email=g("f-email"), phone=g("f-phone"), a=g("f-from"), b=g("f-to"), people=g("f-people"), vid=g("f-vehicle"), msg=g("f-msg");
   const err=$("#f-err"); err.hidden=true;
-  if(!name||(!email&&!phone)||!a||!b){ err.textContent=t("f_err_req"); err.hidden=false; return; }
-  if(b<=a){ err.textContent=t("f_err_order"); err.hidden=false; return; }
-  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent=t("f_err_email"); err.hidden=false; return; }
-  if(phone && phone.replace(/\D/g,"").length<9){ err.textContent=t("f_err_phone"); err.hidden=false; return; }
+  document.querySelectorAll("#inq [aria-invalid]").forEach(x=>x.removeAttribute("aria-invalid"));
+  const bad=ids=>{ ids.forEach(i=>{ const x=$("#"+i); if(x) x.setAttribute("aria-invalid","true"); }); const f=$("#"+ids[0]); if(f) f.focus(); };
+  if(!name||(!email&&!phone)||!a||!b){ err.textContent=t("f_err_req"); err.hidden=false; bad([!name?"f-name":(!email&&!phone)?"f-email":!a?"f-from":"f-to"]); return; }
+  if(b<=a){ err.textContent=t("f_err_order"); err.hidden=false; bad(["f-to"]); return; }
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent=t("f_err_email"); err.hidden=false; bad(["f-email"]); return; }
+  if(phone && phone.replace(/\D/g,"").length<9){ err.textContent=t("f_err_phone"); err.hidden=false; bad(["f-phone"]); return; }
   const bot=($("#f-bot")||{}).value||"";
-  if(rangeHasBooked(vid,a,b)){ err.textContent=t("f_err_booked"); err.hidden=false; return; }
+  if(rangeHasBooked(vid,a,b)){ err.textContent=t("f_err_booked"); err.hidden=false; bad(["f-from"]); return; }
   const v=VEHICLES.find(x=>x.id===vid); const n=Math.round((fromIso(b)-fromIso(a))/864e5);
   const ex=[...document.querySelectorAll("#xChecks input:checked")].map(i=>{ const x=(v.extras||[]).find(e=>e.id===i.value); if(!x) return null;
     return L(x.name)+(x.ask?" ("+t("on_request")+")":""); }).filter(Boolean);
@@ -1288,7 +1308,7 @@ document.addEventListener("submit", async e=>{
     '<div class="btns" style="margin-top:0"><a class="btn btn-solid" id="waLink" target="_blank" rel="noopener" href="https://wa.me/'+CONTACT.whatsapp+'?text='+encodeURIComponent(text)+'">'+icon("wa")+esc(t("ho_wa"))+'</a>'+
     '<a class="btn btn-line" id="mailLink" href="mailto:'+CONTACT.email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text)+'">'+icon("mail")+esc(t("ho_mail"))+'</a>'+
     '<button type="button" class="btn btn-line" data-copy>'+esc(t("ho_copy"))+'</button></div><p class="fine">'+esc(t("ho_note"))+'</p>';
-  ho.hidden=false; ho.scrollIntoView({block:"nearest"});
+  ho.hidden=false; ho.scrollIntoView({block:"nearest"}); ho.focus({preventScroll:true});
 });
 
 async function saveAvail(){

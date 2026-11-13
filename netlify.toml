@@ -21,3 +21,77 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     Strict-Transport-Security = "max-age=31536000"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+# Staré názvy fotek (přejmenováno kvůli SEO, D14)
+[[redirects]]
+  from = "/img/hero.jpg"
+  to = "/img/ford-transit-obytna-dodavka-zepredu.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/hero.jpg"
+  to = "/img/thumb/ford-transit-obytna-dodavka-zepredu.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/bok.jpg"
+  to = "/img/ford-transit-obytna-dodavka-z-boku.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/bok.jpg"
+  to = "/img/thumb/ford-transit-obytna-dodavka-z-boku.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/zad.jpg"
+  to = "/img/ford-transit-zadni-dvere-zebrik.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/zad.jpg"
+  to = "/img/thumb/ford-transit-zadni-dvere-zebrik.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/noc.jpg"
+  to = "/img/ford-transit-obytna-dodavka-v-noci.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/noc.jpg"
+  to = "/img/thumb/ford-transit-obytna-dodavka-v-noci.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/interier-postele.jpg"
+  to = "/img/obytna-dodavka-interier-postele.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/interier-postele.jpg"
+  to = "/img/thumb/obytna-dodavka-interier-postele.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/interier-led.jpg"
+  to = "/img/obytna-dodavka-interier-stresni-okno.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/interier-led.jpg"
+  to = "/img/thumb/obytna-dodavka-interier-stresni-okno.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/interier-zaves.jpg"
+  to = "/img/obytna-dodavka-interier-zavesy.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/interier-zaves.jpg"
+  to = "/img/thumb/obytna-dodavka-interier-zavesy.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/kuchyn.jpg"
+  to = "/img/obytna-dodavka-kuchynka.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/kuchyn.jpg"
+  to = "/img/thumb/obytna-dodavka-kuchynka.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/skrinky.jpg"
+  to = "/img/obytna-dodavka-skrinky-nadobi.jpg"
+  status = 301
+[[redirects]]
+  from = "/img/thumb/skrinky.jpg"
+  to = "/img/thumb/obytna-dodavka-skrinky-nadobi.jpg"
+  status = 301

@@ -54,7 +54,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] B12 🤖 P1 – Z bodů B01–B11 udělat stránku „Ceník a podmínky“ ve 4 jazycích + aktualizovat časté dotazy („Kolik pronájem stojí?“, „Můžu vzít psa?“, „Můžu do zahraničí?“). **10. 11. 2026: body B01–B11 poslány taťkovi e-mailem (j.tomicek@seznam.cz), čeká se na odpověď.**
 - [ ] B13 🤖 P2 – Kalkulačka ceny u kalendáře (noci × cena + doplňky, zobrazit kauci).
 - [ ] B14 🙋 P3 – Slevy: delší pronájem (7+ nocí), mimosezóna, opakovaný zákazník, studenti VŠB.
-- [ ] B15 🤝 P3 – Dárkové poukazy (ideální na Vánoce) – stránka + jednoduchý PDF poukaz.
+- [~] B15 🤝 P3 – Dárkové poukazy (ideální na Vánoce) – stránka + jednoduchý PDF poukaz. – PDF poukaz hotov 2026-11-13, stránka viz E15
 
 ## C · Právní minimum (ověřit s účetní / právníkem – Claude není právník)
 
@@ -62,8 +62,8 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] C02 🤖 P1 – Identifikace provozovatele v patičce (jméno, IČO, sídlo) – až bude C01.
 - [x] C03 🤖 P1 – Stránka „Ochrana osobních údajů“ (GDPR) ve 4 jazycích – co formulář sbírá, proč, jak dlouho, komu (Netlify). (10. 11. 2026)
 - [x] C04 🤖 P1 – Pod tlačítkem formuláře krátká věta s odkazem na C03. (10. 11. 2026)
-- [ ] C05 🤝 P1 – Vzor nájemní smlouvy (dát zkontrolovat odborníkovi).
-- [ ] C06 🤝 P1 – Předávací protokol (stav, km, palivo, poškození) + fotodokumentace při předání.
+- [~] C05 🤝 P1 – Vzor nájemní smlouvy (dát zkontrolovat odborníkovi). – návrh v Claude Docs 2026-11-13, čeká na ceny a kontrolu
+- [~] C06 🤝 P1 – Předávací protokol (stav, km, palivo, poškození) + fotodokumentace při předání. – návrh v Claude Docs 2026-11-13
 - [ ] C07 🤖 P3 – Udržet web bez cookies; pokud přibude analytika s cookies, přidat lištu se souhlasem.
 - [ ] C08 🙋 P2 – Kontrola ochranné známky „VANDR“ (ÚPV + TMview), případně později registrace.
 
@@ -114,7 +114,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [x] F07 🤖 P3 – Ikona na plochu mobilu (apple-touch-icon, manifest). (10. 11. 2026)
 - [x] F08 🤖 P3 – Kontrola kontrastu barev (okrová na světlém pozadí). (11. 11. 2026) – okrový text ztmaven na #8C5512 (kontrast 4,9–6,1 : 1), okrová tlačítka beze změny.
 - [x] F09 🤖 P3 – Projít tmavý režim na všech stránkách. (11. 11. 2026) – v tmavém režimu opravena světle zelená patička a rámeček „Místo převzetí“.
-- [ ] F10 🤖 P3 – Samolepka / polep auta s logem a webem (grafika k tisku).
+- [x] F10 🤖 P3 – Samolepka / polep auta s logem a webem (grafika k tisku). ✅ 2026-11-13 (návrh + podklady 1:1)
 
 ## G · Výkon a technika
 
@@ -155,7 +155,7 @@ Pracovní seznam úkolů pro web **vandrnactyrech.cz**. Procházíme ho postupn�
 - [ ] J03 🙋 P3 – Facebook stránka + skupiny o karavaningu a vanlife.
 - [ ] J04 🙋 P2 – Profil na Campiri / Yescapa jako další zdroj zákazníků.
 - [ ] J05 🤝 P3 – Spolupráce: kempy, půjčovny lodí, VŠB (studentská sleva?).
-- [ ] J06 🤖 P3 – Vizitky / letáček s QR kódem na web (grafika k tisku).
+- [x] J06 🤖 P3 – Vizitky / letáček s QR kódem na web (grafika k tisku). ✅ 2026-11-13 (leták A5 + vizitka, PDF)
 - [ ] J07 🤝 P3 – Jarní kampaň (Google Ads, malý rozpočet) – až bude ceník a pár recenzí.
 - [ ] J08 🤝 P2 – E-mail info@vandrnactyrech.cz (přesměrování do Gmailu) a nahradit jím osobní e-mail na webu.
 
